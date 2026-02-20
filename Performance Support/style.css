@@ -1,0 +1,922 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font size for rem calculations */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6e6e6;
+    color: #333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Prevent layout shift on zoom - like CNN */
+    min-width: 320px;
+}
+
+/* Banner - inner aligns with container; logo starts where left nav buttons start */
+.banner {
+    width: 100%;
+    background-color: #e6e6e6;
+    border-bottom: 0.25rem solid #000;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Logo starts where left nav buttons start: same as container left + (padding-left 20px + nav margin-left -1rem) = 4px inset */
+    padding: 0.625rem 20px 0.625rem 0.25rem;
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Main Container - CNN-style fixed width container prevents layout shift on zoom */
+.container {
+    display: flex;
+    min-height: calc(100vh - 6.25rem);
+    gap: 1.25rem;
+    padding: 1.25rem 20px;
+    align-items: flex-start;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/* Left Navigation - Fixed width to prevent zoom resizing */
+.left-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-left: -1rem;
+    min-width: 140px;
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.nav-button {
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: rgba(0, 0, 0, .7) 0 0 10px;
+    width: 140px;
+    height: 160px;
+    flex-shrink: 0;
+    overflow: hidden;
+    opacity: 50%;
+}
+
+.nav-button:hover,
+#ops-request.nav-button:hover {
+    opacity: 100%;
+    border-color: #af272f;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+.nav-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+    max-width: 100%;
+    overflow: visible;
+    margin-left: 4rem;
+    margin-top: 1.5rem;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+}
+
+.search-input {
+    padding: 0.625rem 0.875rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 18.75rem;
+    max-width: 100%;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #21316f;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 50%;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-button:hover {
+    opacity: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+.search-button:hover .search-icon {
+    border-color: #af272f;
+}
+
+.search-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    border: 0.0625rem solid #000000;
+    transition: border-color 0.2s ease;
+}
+
+/* Search Modal Overlay */
+.search-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0.25rem);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.search-modal-content {
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 50rem;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+    overflow: hidden;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.875rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.75rem;
+    border-bottom: 0.125rem solid #e6e6e6;
+    background-color: #fafafa;
+    flex-shrink: 0;
+}
+
+.search-modal-title {
+    color: #1c4269;
+    font-size: 1.5rem;
+    font-family: tahoma;
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+}
+
+.search-results-count {
+    color: #666;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #e6e6e6;
+    padding: 0.375rem 0.875rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+
+.search-modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.search-modal-close:hover {
+    background-color: #e6e6e6;
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.search-results-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Custom Scrollbar for Results List */
+.search-results-list::-webkit-scrollbar {
+    width: 0.625rem;
+}
+
+.search-results-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.3125rem;
+}
+
+.search-results-list::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 0.3125rem;
+}
+
+.search-results-list::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.search-results-list {
+    scrollbar-width: thin;
+    scrollbar-color: #a0a0a0 #f1f1f1;
+}
+
+.search-result-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.125rem;
+    background-color: #fafafa;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f7ff;
+    border-color: #21316f;
+    box-shadow: 0 0.125rem 0.5rem rgba(33, 49, 111, 0.1);
+    transform: translateX(0.25rem);
+}
+
+.search-result-link {
+    color: #1f2022;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 0.375rem;
+    line-height: 1.4;
+}
+
+.search-result-link:hover {
+    color: #21316f;
+    text-decoration: underline;
+}
+
+.search-result-category {
+    color: #666;
+    font-size: 0.75rem;
+    font-style: italic;
+    margin-top: 0.125rem;
+}
+
+.search-no-results {
+    text-align: center;
+    padding: 3.75rem 1.25rem;
+    color: #666;
+}
+
+.search-no-results p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Content Boxes Grid */
+.boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+    justify-content: start;
+    overflow: visible;
+    grid-auto-rows: min-content;
+}
+
+/* Content Box */
+.content-box {
+    background-color: #fafafa;
+    border: 0.0625rem solid #000;
+    border-radius: 1.5rem;
+    padding: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    box-shadow: none;
+    width: 100%;
+}
+
+/* Regular content boxes - make them more square */
+.content-box:not(.training-library-box) {
+    max-width: 25rem;
+    min-height: 20rem;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Position first row boxes (Admissions Call, System Resources, Search) */
+.content-box:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1 / 5;
+}
+
+.content-box:nth-child(2) {
+    grid-row: 1;
+    grid-column: 5 / 9;
+}
+
+/* Search container positioning */
+.search-container {
+    grid-row: 1;
+    grid-column: 9 / 13;
+}
+
+/* Position Program & Product Knowledge to start on row 2 */
+.content-box:nth-child(4) {
+    grid-row: 2;
+    grid-column: 1 / 5;
+}
+
+/* Position Student Preparation on row 2, column 2 */
+.content-box:nth-child(5) {
+    grid-row: 2;
+    grid-column: 5 / 9;
+}
+
+/* Position Application & Enrollment Resources on row 2, column 3 */
+.content-box:nth-child(6) {
+    grid-row: 2;
+    grid-column: 9 / 13;
+}
+
+/* Position Training Call Library boxes on row 3 - Flexible dimensions to ensure visibility */
+.training-library-box {
+    height: auto;
+    min-height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.training-library-box:nth-child(7) {
+    grid-row: 3;
+    grid-column: 1 / 7;
+    max-width: 100%;
+    width: 100%;
+    /* Ensure box is always visible */
+    display: flex;
+    flex-direction: column;
+}
+
+.training-library-box:nth-child(8) {
+    grid-row: 3;
+    grid-column: 7 / 13;
+    max-width: 100%;
+    width: 100%;
+    /* Ensure box is always visible */
+    display: flex;
+    flex-direction: column;
+}
+
+.content-box:hover {
+    box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.box-title {
+    color: #1c4269;
+    font-size: 1.375rem;
+    font-family: tahoma;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.375rem;
+    border-bottom: 0.0625rem solid #21316f;
+}
+
+.box-content {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-top: 0.625rem;
+}
+
+/* Custom Scrollbar */
+.box-content::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+.box-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.375rem;
+}
+
+.box-content::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 0.375rem;
+}
+
+.box-content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Scrollbar arrows for webkit browsers */
+.box-content::-webkit-scrollbar-button {
+    display: block;
+    height: 0.75rem;
+    width: 0.75rem;
+    background: #a0a0a0;
+}
+
+.box-content::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 0.375rem 0.375rem 0.375rem;
+    border-style: solid;
+    border-color: transparent transparent #666 transparent;
+    background: #a0a0a0;
+}
+
+.box-content::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 0.375rem 0.375rem 0 0.375rem;
+    border-style: solid;
+    border-color: #666 transparent transparent transparent;
+    background: #a0a0a0;
+}
+
+/* Firefox scrollbar */
+.box-content {
+    scrollbar-width: thin;
+    scrollbar-color: #a0a0a0 #f1f1f1;
+}
+
+/* Box Links */
+.box-link {
+    display: block;
+    color: #1f2022;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1.35;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* Add spacing between link groups */
+.box-link.link-group-separator {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.box-link:hover,
+.box-link:focus {
+    color: #af272f;
+    text-decoration: underline;
+}
+
+/* Links that start with CD: blue when highlighted */
+.box-link.cd-link:hover,
+.box-link.cd-link:focus {
+    color: #06aae2;
+}
+
+/* Training Call Library Styles */
+.red-text {
+    color: #cc0000;
+}
+
+/* Title: dark blue with blue underline beneath */
+.training-library-box .box-title {
+    color: #1c4269;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+    border-bottom: 0.1875rem solid #1c4269;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.training-content {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+.training-library-box .box-content {
+    overflow: visible;
+    max-height: none;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Tab-style buttons: active = maroon, inactive = dark grey */
+.training-button {
+    background-color: #333;
+    color: #fff;
+    border: 0.0625rem solid #af272f;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 10rem;
+    width: auto;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.training-button:hover {
+    background-color: #555;
+}
+
+.training-button.active {
+    background-color: #af272f;
+}
+
+.training-button.active:hover {
+    background-color: #af272f;
+}
+
+/* CTU: gradient and black border when button is selected */
+.ctu-box .training-button.active,
+.ctu-box .training-button.active:hover {
+    background: linear-gradient(to bottom, #8d0004, #660000) !important;
+    border: 0.0625rem solid #000000;
+}
+
+/* Coding Dojo: gradient when button is selected */
+.coding-dojo-box .training-button.active,
+.coding-dojo-box .training-button.active:hover {
+    background: linear-gradient(to bottom, #06aae2, #30c9fc) !important;
+}
+
+/* Coding Dojo: header text color */
+.coding-dojo-box .box-title .red-text {
+    color: #06aae2;
+}
+
+/* Training Dropdown Content - scrollable area */
+.training-dropdown {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border: 0.0625rem solid #e0e0e0;
+    border-top: none;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 24rem;
+    overflow-y: auto;
+}
+
+.training-dropdown.active {
+    display: block;
+}
+
+.training-dropdown-item {
+    padding: 0.5rem 0;
+    color: #1f2022;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    display: block;
+    line-height: 1.35;
+}
+
+.training-dropdown-item:hover {
+    color: #21316f;
+    text-decoration: underline;
+}
+
+/* Training Call Library - Audio categories (Prospective Student) */
+.training-audio-section {
+    margin-bottom: 1.25rem;
+}
+
+.training-audio-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Coming soon message under category header */
+.training-coming-soon {
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+/* Full-width dark grey bar with white centered text */
+.training-category-header {
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a4a4a;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 0.125rem;
+}
+
+/* Dropdown item: light grey bar with black text, caret on the right */
+.training-audio-item {
+    margin-bottom: 0.25rem;
+    border-radius: 0.125rem;
+    overflow: hidden;
+}
+
+.training-audio-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    background-color: #e5e5e5;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    color: #1f2022;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    gap: 0.5rem;
+}
+
+.training-audio-item-title:hover {
+    background-color: #d8d8d8;
+}
+
+/* Keep full title as one flex item so "NEW" and rest of text stay together */
+.training-audio-item-title .training-audio-title-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.training-audio-item-title .training-audio-new {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+.training-audio-item-title::after {
+    content: "\25BC";
+    font-size: 0.6em;
+    color: #1f2022;
+    flex-shrink: 0;
+}
+
+.training-audio-item.expanded .training-audio-item-title::after {
+    content: "\25B2";
+}
+
+/* Audio player: light grey container with very rounded corners */
+.training-audio-item-player {
+    padding: 0.75rem;
+    background-color: #f5f5f5;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.training-audio-item-player[hidden] {
+    display: none;
+}
+
+.training-audio-player-wrap {
+    background-color: #e8e8e8;
+    border-radius: 1.25rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    max-width: 20rem;
+    box-sizing: border-box;
+    border: 0.125rem solid #8d0004;
+}
+
+.training-audio-player {
+    width: 100%;
+    max-width: 100%;
+    height: 2rem;
+    display: block;
+}
+
+/* Responsive Design - Medium screens */
+@media (max-width: 75rem) {
+    .boxes-grid {
+        grid-template-columns: repeat(8, 1fr);
+        grid-auto-rows: min-content;
+    }
+    
+    .content-box:not(.training-library-box) {
+        max-width: 100%;
+    }
+    
+    .content-box:nth-child(1) {
+        grid-column: 1 / 5;
+        grid-row: 1;
+    }
+    
+    .content-box:nth-child(2) {
+        grid-column: 5 / 9;
+        grid-row: 1;
+    }
+    
+    .search-container {
+        grid-column: 1 / 9;
+        grid-row: 2;
+    }
+    
+    .content-box:nth-child(4) {
+        grid-column: 1 / 5;
+        grid-row: 3;
+    }
+    
+    .content-box:nth-child(5) {
+        grid-column: 5 / 9;
+        grid-row: 3;
+    }
+    
+    .content-box:nth-child(6) {
+        grid-column: 1 / 5;
+        grid-row: 4;
+    }
+    
+    .training-library-box:nth-child(7) {
+        grid-column: 1 / 5;
+        grid-row: 5;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .training-library-box:nth-child(8) {
+        grid-column: 5 / 9;
+        grid-row: 5;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Mobile Devices - Stack all boxes vertically */
+@media (max-width: 48rem) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .left-nav {
+        flex-direction: row;
+        min-width: auto;
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-button {
+        min-width: 9.375rem;
+        flex-shrink: 0;
+    }
+
+    .boxes-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+    }
+    
+    .content-box:not(.training-library-box) {
+        max-width: 100%;
+        max-height: none;
+    }
+    
+    /* Stack order: search first (below nav buttons), then content boxes in same order */
+    .search-container {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+    }
+    
+    .content-box:nth-child(1) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    
+    .content-box:nth-child(2) {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    
+    .content-box:nth-child(4) {
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+    .content-box:nth-child(5) {
+        grid-row: 5;
+        grid-column: 1;
+    }
+    
+    .content-box:nth-child(6) {
+        grid-row: 6;
+        grid-column: 1;
+    }
+    
+    .training-library-box {
+        min-height: auto;
+        max-width: 100%;
+    }
+    
+    .training-library-box:nth-child(7) {
+        grid-row: 7;
+        grid-column: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .training-library-box:nth-child(8) {
+        grid-row: 8;
+        grid-column: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .search-input {
+        flex: 1;
+        width: 100%;
+    }
+}
