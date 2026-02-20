@@ -1,0 +1,828 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e0dbd8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.banner-container {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
+}
+
+/* Content column: nav + content box (same width; aligns with each other) */
+.content-column {
+    flex: 1;
+    min-width: 703px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ded9d6;
+}
+
+/* Main Navigation Tabs - inside content column so same width as content box */
+.main-nav {
+    width: 100%;
+    background-color: #e0dbd8;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #d0d0d0;
+    flex-shrink: 0;
+    margin-bottom: 6px;
+}
+
+/* Nav-tabs wrapper: full width of content column (= content box width) */
+.nav-tabs-wrapper {
+    width: 100%;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+/* Program selector in header - no longer used (moved to content); keep for any legacy */
+.nav-tab {
+    flex: 1;
+    min-width: 0;
+    height: 36px;
+    line-height: 2.5;
+    background-color: #ffffff;
+    border: 1px solid #ded9d6;
+    border-bottom: 4px solid #ded9d6;
+    padding: 0 20px;
+    font-family: Arial;
+    font-size: 9pt;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.nav-tab:hover {
+    background-color: #ffffff;
+    border-bottom: 4px solid #af272f;
+}
+
+.nav-tab.active {
+    color: #333;
+    border-bottom: 4px solid #ded9d6;
+}
+
+.nav-tab.active:hover {
+    border-bottom: 4px solid #af272f;
+}
+
+/* Select Program dropdown: to the right of content box (in content area, not in nav) */
+.content .program-selector {
+    flex-shrink: 0;
+    width: 240px;
+    display: flex;
+    align-items: flex-start;
+    align-self: flex-start;
+}
+
+.program-selector {
+    display: flex;
+    align-items: center;
+}
+
+.program-selector-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+}
+
+/* Program details box (shown when a program is selected) */
+.program-details-box {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    min-height: 255px;
+    border: 2px solid #B43030;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background: #fff;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.program-details-box.visible {
+    display: flex;
+    animation: program-details-in 0.25s ease-out;
+}
+
+@keyframes program-details-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.program-details-title {
+    background-color: #d0d0d0;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 0 16px 14px 16px;
+    line-height: 1.4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.program-details-section {
+    padding: 0 0 20px 0;
+}
+
+.program-details-section:last-child {
+    padding-bottom: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.program-details-section:last-child .program-details-tuition {
+    flex: 1;
+    min-height: 120px;
+}
+
+.program-details-section-header {
+    background-color: #636569;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding: 12px 16px;
+    line-height: 1.3;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.program-details-length {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 14px 16px 12px;
+}
+
+.program-details-length-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.program-details-length-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.program-details-length-item span {
+    display: block;
+    line-height: 1;
+}
+
+.program-details-long {
+    display: block;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.program-details-tuition {
+    display: flex;
+    width: 100%;
+}
+
+.program-details-civ,
+.program-details-mil {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1;
+    border-radius: 0 0 6px 6px;
+}
+
+.program-details-section:not(:last-child) .program-details-civ,
+.program-details-section:not(:last-child) .program-details-mil {
+    border-radius: 0;
+}
+
+.program-details-civ span,
+.program-details-mil span {
+    display: block;
+    line-height: 1;
+}
+
+.program-details-civ span + span,
+.program-details-mil span + span {
+    margin-top: 6px;
+}
+
+.program-details-civ {
+    background-color: #ffffff;
+}
+
+.program-details-mil {
+    background-color: #d4edda;
+}
+
+.program-details-tuition .program-details-civ {
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.program-details-fast-track-intro {
+    padding: 16px 20px 12px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.program-dropdown {
+    width: 240px;
+    background-color: #333;
+    color: #ffffff;
+    border: 2px solid #000000;
+    padding: 8px 35px 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 0.2s;
+}
+
+.program-dropdown:hover,
+.program-dropdown:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 200px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 140px;
+    background-color: #e0dbd8;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.sidebar-icon {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-icon svg,
+.sidebar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sidebar-text {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Main Content Area */
+.content {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+    background-color: #e0dbd8;
+    padding: 6px 30px 20px 30px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Content main: content box + footer; same width as nav above */
+.content-main {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+}
+
+/* Content box: action buttons + script sections (Introduction, Interview, etc.) */
+.content-box {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-box.dnc-panel-open .action-buttons {
+    margin-bottom: 4px;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 0;
+    background: linear-gradient(to left, #5B636B, #656E76);
+    color: #ffffff;
+    border: none;
+    padding: 10px 32px;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: #000000;
+}
+
+/* DNC button active state: gradient left to right */
+.action-btn-dnc.dnc-active {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    color: #ffffff;
+}
+
+.action-btn-dnc.dnc-active:hover {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    opacity: 0.95;
+}
+
+/* State & Country Restrictions button active state: same gradient as DNC */
+.action-btn-state-country.state-country-active {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    color: #ffffff;
+}
+
+.action-btn-state-country.state-country-active:hover {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    opacity: 0.95;
+}
+
+/* ADA button active state: same gradient as DNC */
+.action-btn-ada.ada-active {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    color: #ffffff;
+}
+
+.action-btn-ada.ada-active:hover {
+    background: linear-gradient(to right, #bf3538, #a0272b);
+    opacity: 0.95;
+}
+
+/* Action panels (DNC, State & Country Restrictions, ADA content below buttons) */
+.action-panel {
+    display: none;
+    background-color: #ffffff;
+    border: 1px dotted #B43030;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    margin-bottom: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12pt !important;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif !important;
+}
+
+.action-panel p,
+.action-panel a,
+.action-panel strong,
+.action-panel span {
+    font-size: 12pt !important;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif !important;
+}
+
+.action-panel p {
+    color: #000000;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.action-panel p:last-child {
+    margin-bottom: 0;
+}
+
+.action-panel .dnc-link {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.action-panel .dnc-placeholder {
+    font-style: italic;
+    color: red;
+}
+
+.action-panel .dnc-paren {
+    color: #000000;
+}
+
+.action-panel .dnc-title {
+    text-decoration: underline;
+}
+
+/* Separator */
+.separator {
+    height: 1px;
+    background-color: #B43030;
+    margin: 20px 0;
+}
+
+/* Section Title */
+.section-title {
+    background-color: #636569;
+    color: white;
+    padding: 5px 5px;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 0 0;
+    display: inline-block;
+}
+
+/* Red bar attached to bottom of section title */
+.section-title + .separator {
+    margin-top: 0;
+}
+
+#introduction-section .separator {
+    margin-bottom: 28px;
+}
+
+/* Script Content */
+.script-content {
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.tab-section {
+    display: block;
+    scroll-margin-top: 100px; /* Offset for fixed header when scrolling */
+}
+
+.script-content p {
+    margin-bottom: 15px;
+}
+
+.script-content strong {
+    font-weight: bold;
+    color: #000000;
+}
+
+.script-content strong.placeholder {
+    color: red;
+}
+
+.script-content .placeholder {
+    color: red;
+    font-weight: bold;
+}
+
+.script-content .placeholder-not-bold {
+    font-weight: normal;
+}
+
+/* Conditional Text Styling */
+.conditional-label {
+    color: #000000;
+}
+
+.conditional-text {
+    color: red;
+    font-style: italic;
+}
+
+.conditional-text-plain {
+    color: #000000;
+    font-style: normal;
+}
+
+.conditional-instruction {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+.script-content .conditional-instruction:has(+ .conditional-instruction) {
+    margin-bottom: 0;
+}
+
+.script-content .conditional-instruction + .conditional-instruction {
+    margin-top: 0;
+}
+
+.script-content .conditional-instruction.tight-lines {
+    line-height: 1.0;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.placeholder-text {
+    color: red;
+}
+
+.underline-placeholder {
+    text-decoration: underline;
+}
+
+/* Links */
+.link {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #004499;
+}
+
+/* Diamond List */
+.diamond-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.diamond-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.diamond-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: #000000;
+}
+
+.diamond-list.red-diamonds li::before {
+    color: #B43030;
+}
+
+.script-content .diamond-list.indent-list {
+    margin-left: 20px;
+}
+
+.script-content .diamond-list.indent-more {
+    margin-left: 36px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.script-content .diamond-list.indent-more li {
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.0;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toggle-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.toggle-label {
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.toggle-label.conditional-text {
+    color: red;
+    margin-left: 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 28px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.toggle-input:checked + .toggle-slider {
+    background-color: #007AFF;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+}
+
+.toggle-input:checked + .toggle-slider:before {
+    transform: translateX(22px);
+}
+
+.toggle-input:focus + .toggle-slider {
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+}
+
+/* Conditional Box (Dotted Border) */
+.conditional-box {
+    border: 2px dashed #B43030;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #fff;
+}
+
+.conditional-block {
+    margin: 15px 0;
+}
+
+.script-content .conditional-block.indent-very {
+    margin-left: 40px;
+}
+
+/* Section Subheadings */
+.section-subheading {
+    color: #B43030;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #B43030;
+}
+
+/* Content Footer */
+.content-footer {
+    background-color: #e0dbd8;
+    padding: 15px 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-link {
+    color: #333;
+    text-decoration: underline;
+    font-size: 13px;
+    margin: 0 5px;
+}
+
+.footer-link:hover {
+    color: #B43030;
+}
+
+.footer-separator {
+    color: #333;
+    margin: 0 8px;
+    font-size: 13px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-nav {
+        padding-left: 0;
+    }
+    
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    
+    .nav-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .content {
+        flex-direction: column;
+    }
+    
+    .content-column {
+        min-width: 0;
+    }
+    
+    .content-main {
+        min-width: 0;
+    }
+    
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+}
