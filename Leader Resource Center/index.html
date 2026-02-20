@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leader Resource Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="content-column">
+
+    <!-- Banner -->
+<header class="main-header" role="banner">
+  <img
+    src="images/Leader Resource Banner.png"
+    alt="Leader Resource Center"
+    class="banner-image"
+  />
+  <div class="search-bar-container">
+    <input type="text" id="resource-search" class="search-input" placeholder="Search links..." autocomplete="off" />
+    <button type="button" id="search-btn" class="search-btn" title="Search">Search</button>
+  </div>
+</header>
+
+<!-- Search modal overlay -->
+<div id="search-overlay" class="search-overlay" aria-hidden="true">
+  <div class="search-modal">
+    <div class="search-modal-header">
+      <h2 class="search-modal-title">Search Results</h2>
+      <span id="search-results-count" class="search-results-count"></span>
+      <button type="button" class="search-modal-close" title="Close">&times;</button>
+    </div>
+    <div id="search-results" class="search-results" aria-live="polite"></div>
+  </div>
+</div>
+
+    <div class="layout">
+
+      <!-- LEFT NAV / REPORTS COLUMN -->
+      <aside class="NavPanelwrapper">
+        <div class="box10">
+          <p class="hdrtxt72"><u>Admissions Reports</u></p>
+
+          <div class="container-PSReq1">
+            <a class="button"
+               href="https://connect.careered.com/admissions-operations/reports/Site%20Pages/Admissions%20Staffing%20List.aspx"
+               target="_blank">
+              <div class="PSreq1"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq2">
+            <a class="button"
+               href="https://connect.careered.com/admissions-operations/reports/Site%20Pages/CTU%20TOER%20Report.aspx"
+               target="_blank">
+              <div class="PSreq2"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq3">
+            <a class="button"
+               href="https://connect.careered.com/admissions-operations/reports/Site%20Pages/CTU%20Marketing%20Summary.aspx"
+               target="_blank">
+              <div class="PSreq3"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq4">
+            <a class="button"
+               href="https://connect.careered.com/admissions-operations/reports/Site%20Pages/CTU%20Daily%20Flash%20Actives%20Only.aspx"
+               target="_blank">
+              <div class="PSreq4"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq6">
+            <a class="button"
+               href="https://connect.careered.com/admissions-operations/reports/Site%20Pages/CTU%20Operational%20Summary.aspx"
+               target="_blank">
+              <div class="PSreq6"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq7">
+            <a class="button"
+               href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Forms/AllItems.aspx?RootFolder=%2Fsites%2FCTU%2Fcampus%5Fdirectors%5Fof%5Fadmissions%2FSOPs%20%20One%20Pagers%2FReports&amp;FolderCTID=0x01200080C73C60825AB0499B21A65E58FEB7CB&amp;View=%7BAF8D687D%2D0223%2D4051%2D9E66%2DFC9F22F608A1%7D"
+               target="_blank">
+              <div class="PSreq7"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <p class="hdrtxt62"><u>CTU Leaders Teams Channels</u></p>
+          <div class="leftclear"></div>
+
+          <div class="container-PSReq8">
+            <a class="button"
+               href="https://teams.microsoft.com/l/channel/19%3A4b1e6d61ebaf4972bce540683f2c2435%40thread.tacv2/Admin and NICE Announcements?groupId=100b227e-f570-4ab6-a2e0-bb1da32af333&tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7"
+               target="_blank">
+              <div class="PSreq8"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq9">
+            <a class="button"
+               href="https://teams.microsoft.com/l/channel/19%3Aa61719de3f6c4da8af679a8cfe2eb3b4%40thread.tacv2/Admissions Training and Resources?groupId=100b227e-f570-4ab6-a2e0-bb1da32af333&tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7"
+               target="_blank">
+              <div class="PSreq9"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq10">
+            <a class="button"
+               href="https://teams.microsoft.com/l/channel/19%3A7cb24d44aa974d0399b580c6a2cfd055%40thread.tacv2/Compliance Updates and Reminders?groupId=100b227e-f570-4ab6-a2e0-bb1da32af333&tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7"
+               target="_blank">
+              <div class="PSreq10"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+
+          <div class="container-PSReq11">
+            <a class="button"
+               href="https://teams.microsoft.com/l/channel/19%3A23e482a4c7654fb0a6e2cf76bb7bff13%40thread.tacv2/Outages and Tech Issues?groupId=100b227e-f570-4ab6-a2e0-bb1da32af333&tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7"
+               target="_blank">
+              <div class="PSreq11"></div>
+            </a>
+            <div class="leftclear"></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT COLUMN -->
+      <main class="maincontentwrapper">
+
+        <!-- Mail Merges -->
+        <section class="box70">
+          <p class="hdrtxt2"><u>Mail Merges</u></p>
+
+          <div class="mailmerge-container">
+            <button type="button" class="toggle-button"
+                    onclick="toggleContent(1, this)">Commitment Grant</button>
+            <button type="button" class="toggle-button"
+                    onclick="toggleContent(2, this)">Prospecting</button>
+            <button type="button" class="toggle-button"
+                    onclick="toggleContent(3, this)">Student Prep</button>
+          </div>
+
+          <div class="mailmerge_Content-container">
+            <!-- Commitment Grant -->
+            <div id="content1" class="content">
+              <div class="MM_Header"><h77>Commitment Grant</h77></div>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/EAC%20Commitment%20Grant.docx"
+                   target="_blank">CTUO EAC Commitment Grant</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Commitment%20Grant%20Graduates%20(UG).docx"
+                   target="_blank">CTUO Commitment Grant Graduates (UG)</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/McDonald%27s%202500%20CG.docx"
+                   target="_blank">CTUO McDonald’s 2500 CG</a>
+              </p>
+            </div>
+
+            <!-- Prospecting -->
+            <div id="content2" class="content">
+              <div class="MM_Header"><h77>Prospecting</h77></div>
+
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Cancelled%20Student%20Outreach.docx"
+                   target="_blank">CTU Cancelled Student Outreach</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Potential%20ReEnroll%20-%20Graduates.docx"
+                   target="_blank">CTU Potential ReEnroll - Graduates</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/ReEntry%20Outreach.docx"
+                   target="_blank">CTU ReEntry Outreach</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/CDOA%20Completed%20App.docx"
+                   target="_blank">CTU Started or Completed Application, No Contact</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/ReEntry%20Degree%20Completion%20Grant.docx"
+                   target="_blank">CTU ReEntry Degree Completion Grant</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Contact%20Limit%20for%20Withdrawn%20Students.docx"
+                   target="_blank">CTUO Contact Limit for Withdrawn Students</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Non-EWC%20Outreach.docx"
+                   target="_blank">CTUO Non-EWC Outreach</a>
+              </p>
+            </div>
+
+            <!-- Student Prep -->
+            <div id="content3" class="content">
+              <div class="MM_Header"><h77>Student Prep</h77></div>
+
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/COS_AUR/COS%20Meet%20and%20Greet.docx"
+                   target="_blank">COS Meet and Greet</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/AM%20Course%20Material%20Hold.docx"
+                   target="_blank">CTU AM Course Material Hold</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Class%20Information.docx"
+                   target="_blank">CTU Class Information</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Displaced%20Student.docx"
+                   target="_blank">CTU Displaced Students</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Missed%20Commitment%20Time.docx"
+                   target="_blank">CTU Missed Commitment Time</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Missed%20New%20Student%20Welcome%20Call%20Appointment.docx"
+                   target="_blank">CTU Missed New Student Welcome Call Appointment</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Save%20the%20Date%20-%20Live%20Classroom%20Overview.docx"
+                   target="_blank">CTU Save the Date - Live Classroom Overview</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Save%20the%20Date%20-%20Live%20Orientation%20Overview.docx"
+                   target="_blank">CTUO Save the Date - Live Orientation Overview</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/ONL%20Orientation%20Information.docx"
+                   target="_blank">CTUO Orientation Information</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/Potential%20IC.docx"
+                   target="_blank">CTUO Potential IC</a>
+              </p>
+              <p class="list">
+                <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Approved%20Mail%20Merges%20for%20Outlook/CTUO%20Non%20Start.docx"
+                   target="_blank">CTUO Non Start</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Start Management -->
+        <section class="box80">
+          <p class="hdrtxt2"><u>Start Management</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/Displaced%20Student%20Policy.pdf"
+               target="_blank">Displaced Student Policy</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/Messenger%20Moderator%20Dashboard%20Job%20Aid.pdf"
+               target="_blank">Messenger Moderator Job Aid</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/CTU%20Live%20VC%20Tour%20Agenda%20and%20Guide.pdf"
+               target="_blank">CTU Live VC Tour Guide</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/Placing%20Students%20on%20a%20Hold%20Group%20SOP.pdf"
+               target="_blank">CTU Placing Students on a Hold Group SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/SOP%20Processing%20Cancels.pdf"
+               target="_blank">CTUO How to Cancel a Student's Enrollment SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/SOP%20Non%20Start%20and%20Start%20Close.pdf"
+               target="_blank">CTUO Non Start and Start Close SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/CTUO%20Forecasting%20Tool.xlsm"
+               target="_blank">CTUO Forecasting Tool</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Start%20Mgmt/CTUO%20Forecasting%20Job%20Aid%20Final.pdf"
+               target="_blank">CTUO Forecasting Job Aid</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/SOP%20Headcount%20Exceptions.pdf"
+               target="_blank">CTUO Headcount Exception SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CD%20SOP%20Start%20Close.pdf"
+               target="_blank">CD SOP Start Close</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CD%20How%20to%20Cancel%20a%20Student's%20Enrollment.pdf"
+               target="_blank">CD How to Cancel a Student’s Enrollment SOP</a>
+          </p>
+        </section>
+
+        <!-- Call Observations & RORs -->
+        <section class="box20">
+          <p class="hdrtxt2"><u>Call Observations &amp; RORs</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/NICE%20Call%20Recording/SOP%20Possible%20ROR%20Calibration%20Request.pdf"
+               target="_blank">ROR Calibration Request SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://apps.powerapps.com/play/e/default-144ec532-2c21-4430-bf7f-49f02b8a67d7/a/44874484-909a-40a1-8ff9-e24444813967?tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7&hint=5114844a-6a9a-4e5c-81de-0de453901dbc&sourcetime=1715615181052"
+               target="_blank">Possible ROR Calibration Request</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/NICE%20Call%20Recording/Admissions%20ROR%20Corrective%20Action%20Job%20Aid.pdf"
+               target="_blank">Admissions ROR Corrective Action Job Aid</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/NICE%20Call%20Recording/NICE%20Job%20Aid.Disconnected%20Call%20Lookup.pdf"
+               target="_blank">Disconnected Call Lookup Job Aid</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/NICE%20Call%20Recording/Observation%20Rubrics/Call%20Observation%20Rubric%20FNL.pdf"
+               target="_blank">Call Observation Rubric</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/NICE%20Call%20Recording/CTU%20Admissions%20Call%20Observation%20Guidelines.pdf"
+               target="_blank">Admissions Call Observation Guidelines</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CTU%20Advisor%20Hang%20Ups%20SOP.pdf"
+               target="_blank">CTU Advisor Hang Ups SOP</a>
+          </p>
+        </section>
+
+        <!-- Administrative Forms -->
+        <section class="box30">
+          <p class="hdrtxt2"><u>Administrative Forms</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/SOP%20Admissions_Team_Division_Advisor%20Changes_.pdf"
+               target="_blank">Admissions Team, Division, &amp; Advisor Changes SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/Advisor%20Team%20Change%20Email%20Template.oft"
+               target="_blank">Advisor Team Change Email Template</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/TeamDivision%20Changes.oft"
+               target="_blank">Team/Division Changes Email Template</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/FAQs/FAQs%20for%20Campus%20Directors.pdf"
+               target="_blank">CTU FAQs for Campus Directors</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/Admissions%20Mail%20Merge%20Guidelines.pdf"
+               target="_blank">CTU Admissions Mail Merge Guidelines</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/Call%20List%20Generator%20Job%20Aid.pdf"
+               target="_blank">CTUO Call Lists Job Aid</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/Strategic%20Student%20Outreach%20Best%20Practices%20Final.pdf"
+               target="_blank">CTUO Strategic Student Outreach Best Practices</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CTUO%20Uploading%20a%20CSL.pdf"
+               target="_blank">CTUO Uploading a CSL</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CD%20Sending%20a%20CSL.pdf"
+               target="_blank">CD Sending a CSL</a>
+          </p>
+        </section>
+
+        <!-- Advisor Performance Management -->
+        <section class="box40">
+          <p class="hdrtxt2"><u>Advisor Performance Management</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ConnectEd/hr-and-policies/MyManagerTools/Performance-Improvement-Plans.aspx"
+               target="_blank">CTU Performance Improvement Plans</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/Performance%20Mgmt/Goal%20Proration%20Calculator.xlsx"
+               target="_blank">CTUO Goal Proration Calculator</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CTUO%20Admissions%20PIP%20Grid.pdf"
+               target="_blank">CTUO Performance Management Reference</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CTUO%20Admissions%20PIP%20Workflow%20SOP.pdf"
+               target="_blank">CTUO Admissions PIP Workflow Job Aid</a>
+          </p>
+          <p class="list list2">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/admissions/Admissions%20Forms/Performance%20Support%20Documents/Performance%20Improvement%20Plan%20Goals.pdf"
+               target="_blank">CTUO Performance Goals, Action Steps &amp; Measurement Reference</a>
+          </p>
+          <p class="list list-multi">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/SOPs%20and%20One%20Pagers/CTUO%20Advisor%20Scorecard%20Tracking%20Database%20Instructions.pdf"
+               target="_blank">CTUO Advisor Scorecard Tracking Database Instructions</a>
+          </p>
+          <p class="list">
+            <a href="file://edc-fs2/data/CTU%20Online/CTU%20Admissions/All%20Admissions/DOA%20Excel%20Reports%20and%20Templates/CTUO%20Advisor%20Tracking%20Database%20-%20Front%20End.accdb"
+               target="_blank">CTUO Advisor Scorecard Tracking Database</a>
+          </p>
+        </section>
+
+        <!-- Administrative Requests (Buttons) -->
+        <section class="box50">
+          <p class="hdrtxt22">
+            <span class="submit-text"><u>Administrative Requests</u></span>
+            <span class="click-text">Click your selection</span>
+          </p>
+
+          <div class="link-buttons">
+            <a class="box-link"
+               href="https://apps.powerapps.com/play/e/default-144ec532-2c21-4430-bf7f-49f02b8a67d7/a/cb1509c5-a4ef-4f0f-a5a3-31f6c9e4d4af?tenantId=144ec532-2c21-4430-bf7f-49f02b8a67d7"
+               target="_blank">
+              Submit an Ops Request
+            </a>
+            <a class="box-link"
+               href="https://livecareered.sharepoint.com/sites/CTU/CTU OmbudsmansOffice/Lists/Suspected Fraud/NewForm.aspx?Source=https%3a%2f%2flivecareered.sharepoint.com%2fsites%2fCTU%2fCTU%2520OmbudsmansOffice%2fLists%2fSuspected%2520Fraud%2fAllItems.aspx&ContentTypeId=0x0100BD1E64572962F645BC70842A68FC5986&id=%2fsites%2fCTU%2fCTU+OmbudsmansOffice%2fLists%2fSuspected+Fraud&isSPOFile=1&OR=Teams-HL&CT=1750705226622"
+               target="_blank">
+              Suspected Fraud
+            </a>
+          </div>
+        </section>
+
+        <!-- Advisor Onboarding -->
+        <section class="box60">
+          <p class="hdrtxt2"><u>Advisor Onboarding</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20CDOA%20Welcome%20Call.pdf"
+               target="_blank">Admissions Advisor New Hire Welcome Call</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/SOP_Rehire%20and%20Return%20from%20Leave%20Training%20Requirements.pdf"
+               target="_blank">Rehire and RFL Training Requirements SOP</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/90%20Day%20Introductory%20Period%20Workflow%20SOP.pdf"
+               target="_blank">
+              90-Day Introductory Period Workflow Job Aid
+            </a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/Ground%20CDOA%20New%20Hire%20Checklist.docx"
+               target="_blank">COS CDOA New Hire Checklist</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20Activities.pdf"
+               target="_blank">CTU New Hire Activities</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20Self%20Evaluation%20v2.0%20.pdf"
+               target="_blank">CTU New Hire Self-Evaluation</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/CTU%20Campus%20Director%20of%20Admissions%20Expectations.pdf"
+               target="_blank">CTU CDOA Onboarding Expectations</a>
+          </p>
+        </section>
+
+        <!-- Director Onboarding -->
+        <section class="box15">
+          <p class="hdrtxt2"><u>Director Onboarding</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/Leadership%20Fundamentals%20Guidelines.pdf"
+               target="_blank">Leadership Fundamentals Guidelines</a>
+          </p>
+
+          <div class="MM_Header">
+            <h77>CTU CDOA New Hire Workbook</h77>
+          </div>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/00%20Operating%20Systems%20Final.pdf"
+               target="_blank">Unit 0: Operating Systems</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/01%20LG%20Introduction_Final.pdf"
+               target="_blank">Unit 1: Introduction</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/02%20NICE%20Interaction%20Management_Final.pdf"
+               target="_blank">Unit 2: NICE Interaction Management</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/03%20Human%20Resources%20and%20Employee%20Relations%20Final.pdf"
+               target="_blank">Unit 3: Human Resources and Employee Relations</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/04%20CTU%20Admissions%20Training%20Final.pdf"
+               target="_blank">Unit 4: CTU Admissions Training</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/05%20Interviewing%20and%20Hiring%20Final.pdf"
+               target="_blank">Unit 5: Interviewing and Hiring</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/New%20Hire%20WB/06%20Start%20Management%20Final.pdf"
+               target="_blank">Unit 6: Start Management</a>
+          </p>
+          <p class="list">
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=MsVOFCEsMES_f0nwK4pn1_GakIpmGRFJuQekxSwF40lUMVpVQTNLRDQyNExTUzJUSUUyRUEzVFRaVi4u"
+               target="_blank">CDOA Fundamentals Knowledge Check</a>
+          </p>
+        </section>
+
+        <!-- Separating -->
+        <section class="box25">
+          <p class="hdrtxt2"><u>Separating</u></p>
+
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/ctu/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/CDOA%20Separated%20Employees%20Checklist.pdf"
+               target="_blank">Admissions Separation Checklist</a>
+          </p>
+          <p class="list">
+            <a href="https://livecareered.sharepoint.com/sites/CTU/campus_directors_of_admissions/SOPs%20%20One%20Pagers/New%20Hire%20Onboarding%20and%20Separating/Email-Templates/CTU%20Advisor%20Separated.oft"
+               target="_blank">Separated Employee Email Template</a>
+          </p>
+        </section>
+
+      </main>
+    </div>
+
+    </div><!-- /content-column -->
+  </div>
+</body>
+</html>
