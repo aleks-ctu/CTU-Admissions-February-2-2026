@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions Call Script</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Banner -->
+        <div class="banner-container">
+            <img src="images/GenScriptBanner.png" alt="Admissions Call Script Banner" class="banner-image">
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-item" data-section="general">
+                    <div class="sidebar-icon">
+                        <img src="images/generalOn.png" alt="General" />
+                    </div>
+                </div>
+                <div class="sidebar-item" data-section="nursing">
+                    <div class="sidebar-icon">
+                        <img src="images/nursingOff.png" alt="Nursing" />
+                    </div>
+                </div>
+                <div class="sidebar-item" data-section="military">
+                    <div class="sidebar-icon">
+                        <img src="images/militaryOff.png" alt="Military" />
+                    </div>
+                </div>
+                <div class="sidebar-item" data-section="chat">
+                    <div class="sidebar-icon">
+                        <img src="images/chatOffButton.png" alt="Chat On/Off" />
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <div class="content-column">
+            <!-- Top Navigation Tabs (same width as content box) -->
+            <nav class="main-nav">
+                <div class="nav-tabs-wrapper">
+                    <div class="nav-tabs">
+                        <button class="nav-tab active" data-tab="introduction">Introduction</button>
+                        <button class="nav-tab" data-tab="interview">Interview</button>
+                        <button class="nav-tab" data-tab="information">Information</button>
+                        <button class="nav-tab" data-tab="program-length">Program Length</button>
+                        <button class="nav-tab" data-tab="financial-aid">Financial Aid & Tuition</button>
+                        <button class="nav-tab" data-tab="conclusion">Conclusion</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="content-main">
+            <div class="content-box">
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn action-btn-dnc" id="dncBtn">DNC</button>
+                <button class="action-btn action-btn-state-country" id="stateCountryBtn">State & Country Restrictions</button>
+                <button class="action-btn action-btn-ada" id="adaBtn">ADA</button>
+            </div>
+
+            <!-- DNC Content (shown when DNC button is clicked) -->
+            <div class="action-panel dnc-content" id="dncContent">
+                <p><strong class="dnc-title">Do Not Call:</strong></p>
+                <p>If an individual requests to NOT be contacted anymore, confirm the number and place on DNC.</p>
+                <p>If unable to confirm the individual's number OR they have already requested to be placed on DNC and they are not currently on DNC, you must submit a <a href="https://livecareered.sharepoint.com/sites/ConnectEd/ethics-compliance/Lists/DNC%20Complaint/NewForm.aspx?Source=https%3A%2F%2Flivecareered%2Esharepoint%2Ecom%2Fsites%2FConnectEd%2Fethics%2Dcompliance%2FLists%2FDNC%2520Complaint%2FAllItems%2Easpx%3Fviewid%3D332d789d%252D3f8f%252D4dd3%252Daded%252D63c372e122ab&ContentTypeId=0x0100137961C87BF1C545A57DC09FC0502FE400E2EC19C679CF574CB89638DB2EB9D73C&RootFolder=%2Fsites%2FConnectEd%2Fethics%2Dcompliance%2FLists%2FDNC%20Complaint" class="dnc-link" target="_blank" rel="noopener noreferrer">DNC Complaint form.</a></p>
+                <p><strong>DNC Talking Point:</strong> <span class="dnc-paren">(</span><span class="dnc-placeholder">Insert name</span><span class="dnc-paren">)</span>, please excuse this call. I will have your phone number removed from the calling list. Please be aware that it may take up to 5 days to implement your request within our system.</p>
+            </div>
+
+            <!-- State & Country Restrictions Content (shown when State & Country Restrictions button is clicked) -->
+            <div class="action-panel state-country-content" id="stateCountryContent">
+                <p><strong class="dnc-title">State & Country Restrictions:</strong></p>
+                <p>If the PS resides in a restricted state/country per the Admissions Protection Guidelines, share the talking point.</p>
+                <p><strong>State & Country Restrictions Talking Point:</strong> The University is not accepting new applications from residents of <span class="dnc-paren">(</span><span class="dnc-placeholder">insert state/country</span><span class="dnc-paren">)</span>.</p>
+            </div>
+
+            <!-- ADA Content (shown when ADA button is clicked) -->
+            <div class="action-panel ada-content" id="adaContent">
+                <p><strong class="dnc-title">ADA Reminder:</strong></p>
+                <p>If the PS discloses that they have a disability AND they ask if CTU offers reasonable accommodations, advise them to email <a href="mailto:ADA504@coloradotech.edu" class="dnc-link">ADA504@coloradotech.edu</a> for more information.</p>
+                <p>DO NOT ask the PS if they need special accommodations or ask questions about their disability.</p>
+            </div>
+
+            <!-- Call Script Content -->
+            <div class="script-content" id="scriptContent">
+                <!-- Introduction Section Content -->
+                <div class="tab-section" id="introduction-section">
+                    <!-- Section Title -->
+                    <div class="section-title">INTRODUCTION</div>
+                    <!-- Red Separator -->
+                    <div class="separator"></div>
+                    <p><span class="conditional-text">If outbound: <span class="conditional-text-plain">May I speak with (</span><span class="placeholder placeholder-not-bold">insert PS's name</span><span class="conditional-text-plain">)</span><span class="conditional-text-plain">?</span></span></p>
+                    
+                    <p><strong>Hi, <span class="placeholder">(insert PS's name)</span>, this is <span class="placeholder">(insert your first and last name)</span> on a recorded line. I'm your Admissions Advisor at Colorado Technical University. I'd like to learn about your educational goals to see if CTU may be a good fit. My callback number is <span class="placeholder">(insert your direct line)</span>.</strong></p>
+                    
+                    <p>Thank you for your interest in CTU, how are you today?</p>
+                    
+                    <p>Just to confirm; do you, your spouse, or your parents have any military experience?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If yes, thank them for their service. If you are not skilled for military, transfer to 24247.</span></p>
+                    <p class="conditional-instruction"><span class="conditional-text">If referral and active/reserve/guard, confirm they are ok moving forward with the conversation. If they are not, place on DNC.</span></p>
+                    
+                    <p>Let me tell you a little bit about CTU. We were established in 1965 and we are institutionally accredited by the Higher Learning Commission. We offer various degrees online and we have a campus in Colorado Springs.</p>
+                    
+                    <p>What has you interested in earning your degree?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If COS: <span class="conditional-text-plain">Are you interested in attending on campus?</span></span></p>
+                    <p class="conditional-instruction"><span class="conditional-text">If PS is interested in attending 100% online, they must enroll into the online platform/CampusVue.</span></p>
+                </div>
+
+                <!-- Interview Section Content -->
+                <div class="tab-section" id="interview-section">
+                    <!-- Section Title -->
+                    <div class="section-title">INTERVIEW</div>
+                    <!-- Red Separator -->
+                    <div class="separator"></div>
+                    <p>I want to learn more about your background; let's take it all the way back to high school. One of the admissions requirements is to have valid proof of high school education. Where did you earn your high school diploma or GED? Ok, give me a minute while I look that school up. <span class="conditional-text">Confirm the school is not on the <a href="https://livecareered.sharepoint.com/sites/ConnectEd/academics/pog/default.aspx" class="link" target="_blank" rel="noopener noreferrer">Unacceptable Schools List</a> and proceed as needed.</span></p>
+                    
+                    <ul class="diamond-list indent-list">
+                        <li>Do you have a copy of your <span class="conditional-text-plain">(</span><span class="placeholder-text">diploma/GED</span><span class="conditional-text-plain">)</span>?</li>
+                        <li>How about college, have you earned any credits or a degree?</li>
+                    </ul>
+                    
+                    <div class="conditional-block indent-very" id="college-no-block">
+                        <p class="conditional-instruction"><span class="conditional-text">If no: </span><span class="conditional-text-plain">That's ok, how comfortable are you with the concept of going to school online?</span></p>
+                    </div>
+                    
+                    <div class="conditional-block indent-very" id="college-yes-block">
+                        <p class="conditional-instruction tight-lines"><span class="conditional-text">If yes: </span><span class="conditional-text-plain">We have a department called Registrar Evaluation Services that evaluates transcripts for potential credit. CTU will request your official transcripts from any institution that you list on the application, but if you have any unofficial copies, we can also evaluate those so you have an idea of what may transfer in.</span></p>
+                        <ul class="diamond-list indent-more">
+                            <li>Do you have a copy of your transcripts?</li>
+                            <li>Tell me more about your college experience.</li>
+                            <li>Have you taken online classes?</li>
+                            <li>Thinking about your previous educational experiences, what extra support do you feel could have been helpful to you?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toggle-container">
+                        <label class="toggle-label conditional-text">If PS has international transcripts:</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="international-transcripts-toggle" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="conditional-box" id="international-transcripts-box" style="display: none;">
+                        <p>Your transcripts must be translated into English and evaluated by a NACES member or AACRAO within one session of your program start date. Have you completed this process?</p>
+                        <p class="conditional-instruction"><span class="conditional-text">If no, follow the process outlined in the <a href="#" class="link">University Catalog</a>.</span></p>
+                    </div>
+                    
+                    <p>I appreciate you sharing information about your educational background. CTU provides support to students through our advisors, our Virtual Campus, and our mobile app. What type of support do you need to complete your degree?</p>
+                    
+                    <p>I'd like to gain a better understanding of your work experience, are you currently working?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If yes: </span><span class="conditional-text-plain">Where do you work and what do you do?</span><span class="conditional-text"> Review the list of <span class="conditional-text">Educational Alliances</span> <a href="https://eac1.my.site.com/CCEResource/s/" class="link" target="_blank" rel="noopener noreferrer">here</a> and share the following, <span class="conditional-text">if they work for an Educational Alliance.</span></span></p>
+                    <p class="body-align">Your company is an Educational Alliance with CTU. This means you may be eligible for a tuition grant of <span class="underline-placeholder">____%</span>.</p>
+                    
+                    <p class="body-align">Our programs are designed for busy adults. Students can log in when it's convenient for them whether it's from their desktop or mobile device using our CTU Mobile app.</p>
+                    
+                    <ul class="diamond-list tight-list">
+                        <li>What does your daily routine look like?</li>
+                        <li>How do you see school fitting into your schedule?</li>
+                        <li>What other responsibilities or activities would you need to work around?</li>
+                        <li>Why do you feel this is the right time for you to pursue your education?</li>
+                    </ul>
+                    
+                    <p>I see here that you indicated interest in the (<span class="placeholder placeholder-not-bold">insert degree program of interest</span>). Tell me more about that.</p>
+                    
+                    <ul class="diamond-list tight-list">
+                        <li>Why did you choose that program?</li>
+                        <li>What are you hoping to learn by earning your degree?</li>
+                        <li>How do you believe that would help you?</li>
+                        <li>Are there any other programs you'd like us to review?</li>
+                    </ul>
+                    
+                    <p>Thank you for sharing a bit about yourself, it really does help me get to know you better. So let's take a look at that program first. Can you access the internet while we're on the phone?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">Send the UES Login email from IMS/ADM to the PS.</span></p>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-container">
+                            <label class="toggle-label">If yes</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="internet-yes-toggle" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-container">
+                            <label class="toggle-label conditional-text">If no</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="internet-no-toggle" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="conditional-box" id="internet-yes-box" style="display: none;">
+                        <p>I'm going to send you an email that has a link you can click on to access a site where we'll review the degree programs.</p>
+                    </div>
+                    
+                    <div class="conditional-box" id="internet-no-box" style="display: none;">
+                        <p>Not a problem, we can still review the degree programs.</p>
+                    </div>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">Review the PS's degree of interest using the Campus Presentation and compare it to other degrees that may fit their needs to determine the recommended degree program.</span></p>
+                    
+                    <div class="share-program-info-block">
+                        <p><span class="conditional-text">Share program information:</span></p>
+                        <ul class="diamond-list red-diamonds tight-list conditional-text-list">
+                            <li>overview</li>
+                            <li>programmatic accreditation</li>
+                            <li>course descriptions</li>
+                            <li>admissions or foundation requirements</li>
+                        </ul>
+                    </div>
+                    
+                    <p>After reviewing the degree programs, do you agree that (<span class="placeholder placeholder-not-bold">insert the recommended degree program</span>) is the right program for you?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If not, ask additional follow-up questions to determine if another program fits their needs.</span></p>
+                    
+                    <p>I mentioned that we have a mobile app, but you are going to need to have reliable access to a computer with internet, not just a mobile device or tablet. Do you have that?</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If the PS does not have reliable access to a computer with internet, discuss if there is a plan in place before classes begin.</span></p>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-container">
+                            <label class="toggle-label conditional-text">COS if no plan in place</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="cos-no-plan-toggle" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-container">
+                            <label class="toggle-label conditional-text">ONL if no plan in place</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="onl-no-plan-toggle" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-container">
+                            <label class="toggle-label conditional-text">CG if no plan in place</label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="cg-no-plan-toggle" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="conditional-box" id="cos-no-plan-box" style="display: none;">
+                        <p>Like I mentioned, reliable access to a computer with internet is required to be a CTU student. Unfortunately, I can't recommend you apply at the moment; however, please call me when you obtain this, and I would be happy to help you apply then. <span class="conditional-text"><em>Politely end the call with a plan in place to check back with them in the future.</em></span></p>
+                    </div>
+                    
+                    <div class="conditional-box" id="onl-no-plan-box" style="display: none;">
+                        <p>CTU has a laptop program for eligible students. Financial Aid will discuss eligibility and funding during the packaging process. The laptop will be yours to keep and comes with resources already installed to help you log in to the Virtual Campus, download Microsoft 365, connect with CTU Technical Support, and access the warranty process. Laptops don't ship until after classes begin, so you will need to have access to a computer with internet until you receive your laptop. Is this something you'd be interested in?</p>
+                        <p class="conditional-instruction"><span class="conditional-text">If PS is interested, review the laptop specs and cost using the <a href="#" class="link">CTU Admissions FAQs</a> (CTU Laptop Program & Computer Access), and let them know you will inform FA so they can discuss it further when you transfer during the Welcome Call.</span></p>
+                        <p class="conditional-instruction"><span class="conditional-text">If PS is not interested: Like I mentioned, reliable access to a computer with internet is required to be a CTU student. Unfortunately, I can't recommend you apply at the moment; however, please call me when you obtain this, and I would be happy to help you apply then. <em>Politely end the call with a plan in place to check back with them in the future.</em></span></p>
+                        <p class="conditional-instruction"><span class="conditional-text">If needed, send the Hardware & Software Requirements and Laptop Program Information email template from ClearSlide.</span></p>
+                    </div>
+                    
+                    <div class="conditional-box" id="cg-no-plan-box" style="display: none;">
+                        <p><span class="conditional-text">McDonald's:</span> Review the <a href="#" class="link">Laptop Process FAQs</a> located in the <a href="#" class="link">CCE Resource Center</a> to determine eligibility.</p>
+                        <p class="conditional-instruction"><span class="conditional-text">If student is eligible:</span> A laptop may be available to you if you qualify. After you enroll, you'll want to watch your email for additional details. The email will be sent to you by our Center for Corporate Engagement from the <a href="#" class="link">CTUFinancialAid@coloradotech.edu inbox.</a></p>
+                        <p class="conditional-instruction"><span class="conditional-text">If no or the student is not eligible, review the "ONL if no plan in place".</span></p>
+                        
+                        <p><span class="conditional-text">BHMT:</span> Review the <a href="#" class="link">Ben Hudnall Memorial Trust Laptop Lending Program</a> located in the <a href="#" class="link">CCE Resource Center</a> to determine eligibility.</p>
+                        <p class="conditional-instruction"><span class="conditional-text">If student is eligible:</span> The Ben Hudnall Memorial Trust offers a laptop lending program. I encourage you to review and follow the steps outlined to apply on the Ben Hudnall Memorial Trust website.</p>
+                        <p class="conditional-instruction"><span class="conditional-text">If student is not eligible or does not want to apply, review "ONL if no plan in place ".</span></p>
+                    </div>
+                </div>
+
+                <!-- Information Section Content -->
+                <div class="tab-section" id="information-section">
+                    <!-- Section Title -->
+                    <div class="section-title">INFORMATION</div>
+                    <!-- Red Separator -->
+                    <div class="separator"></div>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text"><em>Reference the Campus Presentation site as needed for a visual aid.</em></span></p>
+                    
+                    <h3 class="section-subheading">Virtual Campus & Classroom</h3>
+                    
+                    <p>Let's talk about what our virtual campus has to offer. The virtual campus is where you will access your classes, financial aid documents, our learning center and student resources including the library, books, and tutoring. To get familiar with the virtual campus, we offer weekly live tours that you can join.</p>
+                    
+                    <p>CTU's curriculum is designed to challenge you to organize, research and solve real-world problems. We refer to this as our Professional Learning Model. When classes begin, you'll have live or recorded live chats and assignments each week. Your assignments may be a discussion board, an individual project, a group project, or intellipath® <span class="cos-toggle-text" style="display: none;">(for COS: worksheets, presentation, simulations, tests)</span>. Intellipath® is our proprietary educational technology, which is an adaptive learning platform. Have you ever heard of that? Adaptive learning technology recognizes what you already know, anticipates what you're ready to learn, and personalizes your course materials accordingly.</p>
+                    
+                    <div class="toggle-container">
+                        <label class="toggle-label">COS</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="cos-toggle" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <p><strong>ONL:</strong> Before classes start, you'll go through Orientation which gives you a chance to get familiar with the virtual classroom and the various types of assignments.</p>
+                    
+                    <h3 class="section-subheading">CTU Messenger & CTU Student Community</h3>
+                    
+                    <p>It's important for students to stay connected with CTU. One way to do that is with CTU Messenger. This is a two-way communication platform that allows you to easily chat with your advisors, instructors, and other departments. A lot of our students like the convenience of this tool because they may not be able to call us but can still get questions answered. It's easily accessible from the mobile app and a computer. Are you comfortable using instant messaging?</p>
+                    
+                    <p>Another way for students to connect is with our CTU Student Community. This is a social media platform that connects you with other CTU students based on common interests.</p>
+                    
+                    <h3 class="section-subheading">Recognition & Graduation</h3>
+                    
+                    <p>I want to also share with you some of our recognition. CTU's online degree programs are ranked among the best in 2025 by U.S. News & World Report, which is a globally respected organization and authority in education rankings. 2025 was our eleventh consecutive year for this ranking.</p>
+                    
+                    <p>Something else our students are often curious about is if we have a graduation ceremony. CTU has in-person and virtual graduation ceremonies. It's a pretty exciting experience and we also stream it live for students who may not be able to attend. When you think ahead about graduation, who would you invite to see you graduate?</p>
+                    
+                    <p>Let's talk about program length, financial aid, and tuition. Before we do what questions do you have about what I just shared?</p>
+                    
+                    <h3 class="section-subheading">Program Length</h3>
+                    
+                    <p>Typically, students start with one class. This helps students build confidence in their study habits, time management skills, and their academic abilities before taking on a heavier course load.</p>
+                    
+                    <div class="program-length-toggles">
+                        <div class="program-length-toggle-item">
+                            <strong class="program-length-label">Associate</strong>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="program-length-associate" class="toggle-input" name="program-length-level">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="program-length-toggle-item">
+                            <strong class="program-length-label">Bachelor's</strong>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="program-length-bachelors" class="toggle-input" name="program-length-level">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="program-length-toggle-item">
+                            <strong class="program-length-label">Master's</strong>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="program-length-masters" class="toggle-input" name="program-length-level">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="conditional-box program-length-content" id="program-length-associate-box" style="display: none;">
+                        <p>Our sessions are 5 weeks long and you have the option to choose a full-time credit load, which is two courses per session or a standard credit load, which alternates from one to two courses per session. You have the flexibility to choose your preferred credit load. Which one would you prefer?</p>
+                        <p>The <strong>Associate</strong> degree is designed as a <strong>24 month program</strong>, however based on <span class="placeholder placeholder-not-bold">(insert preferred credit load)</span> your program could be completed in <span class="underline-placeholder">____</span> months. This program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                        <p>You also have the option of changing your credit load at any point during your program.</p>
+                    </div>
+                    
+                    <div class="program-length-option-buttons" id="program-length-bachelors-buttons" style="display: none;">
+                        <button type="button" class="action-btn program-length-option-btn" data-program="bsce">BSCE</button>
+                        <button type="button" class="action-btn program-length-option-btn" data-program="bscj-fi">BSCJ-FI</button>
+                        <button type="button" class="action-btn program-length-option-btn" data-program="bsee">BSEE</button>
+                        <button type="button" class="action-btn program-length-option-btn" data-program="all-other-bachelors">All Other Bachelor Programs</button>
+                    </div>
+                    
+                    <div class="conditional-box program-length-content" id="program-length-bsce-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">BSCE</strong></p>
+                        <p>Your courses will be a mix of 5 and 10 week courses and you will alternate one course, then two courses per session. The <strong>Bachelor of Science Degree in Computer Engineering is designed as a 48 month program</strong>. Your program can be completed in <span class="underline-placeholder">______</span> months. This program length is an estimated time and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    <div class="conditional-box program-length-content" id="program-length-bscj-fi-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">BSCJ-FI</strong></p>
+                        <p>Your program length and credit load options will vary. This program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    <div class="conditional-box program-length-content" id="program-length-bsee-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">BSEE</strong></p>
+                        <p>Your courses will be a mix of 5 and 10 week courses. This program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    <div class="conditional-box program-length-content" id="program-length-all-other-bachelors-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">All Other Bachelor Programs</strong></p>
+                        <p>Our sessions are 5 weeks long. Your program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    
+                    <div class="program-length-option-buttons" id="program-length-masters-buttons" style="display: none;">
+                        <button type="button" class="action-btn program-length-option-btn" data-program="mba-msm">MBA/MSM</button>
+                        <button type="button" class="action-btn program-length-option-btn" data-program="all-other-masters">All Other Master Programs</button>
+                    </div>
+                    
+                    <div class="conditional-box program-length-content" id="program-length-mba-msm-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">MBA/MSM</strong></p>
+                        <p>Master's program length and credit load options will vary. This program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    <div class="conditional-box program-length-content" id="program-length-all-other-masters-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">All Other Master Programs</strong></p>
+                        <p>Master's program length and credit load options will vary. This program length is an <strong>estimated time</strong> and varies depending on your credit load, transfer credit acceptance, academic breaks, and assumes you pass all of your courses.</p>
+                    </div>
+                    
+                    <h3 class="section-subheading">Financial Aid</h3>
+                    
+                    <div class="financial-aid-buttons">
+                        <button type="button" class="action-btn financial-aid-option-btn" id="commitment-grant-btn">Commitment Grant</button>
+                    </div>
+                    
+                    <div class="conditional-box" id="commitment-grant-box" style="display: none;">
+                        <p>Let's talk about how you'll fund your education using the Commitment Grant which may allow your tuition and fees to be covered up to 100%. <em><span class="placeholder placeholder-not-bold">(Insert alliance)</span></em> provides eligible employees with <em><span class="placeholder placeholder-not-bold">(insert annual amount of TA)</span></em> per year in tuition assistance, which is the amount we bill you for. The per session amount is <span class="underline-placeholder">____</span>. According to our agreement with <em><span class="placeholder placeholder-not-bold">(insert alliance)</span></em>, your employer tuition assistance program is set up as <em><span class="placeholder placeholder-not-bold">(direct bill/tuition reimbursement/deferred reimbursement)</span></em>.</p>
+                        <p class="conditional-instruction"><span class="conditional-text"><em>If direct bill:</em></span> With direct bill you may be required to apply for TA each session through your employer or a third-party tuition provider, and then provide a copy of your letter of credit or voucher to the financial aid department each session. The remainder of your tuition may be covered by CTU through the Commitment Grant for as long as you remain eligible. Our Finance Advisors will provide you with the correct information you'll need to fill out your TA application and answer any questions you may have.</p>
+                        <p class="conditional-instruction"><span class="conditional-text"><em>If tuition reimbursement:</em></span> With reimbursement accounts you will need to apply for TA each session through your employer, and you will be charged on the last day your session ends. This means you will be charged the amount we discussed per session, and then reimbursed through your employer per your TA policy.</p>
+                        <p>This will require you to place a credit or debit card on file with our Student Accounts department and sign a student payment agreement to set up the recurring payment of <em><span class="placeholder placeholder-not-bold">(insert per session amount)</span></em> per session. You will also need to provide proof of employment, such as a current pay stub dated within 45 days of the session start date.</p>
+                        <p>The remainder of your tuition each session may be covered by CTU through the Commitment Grant for as long as you remain eligible. Our Finance Advisors will assist you as needed with completing your TA application and answer any questions you may have along the way.</p>
+                        <p class="conditional-instruction"><span class="conditional-text"><em>If deferred billing reimbursement:</em></span> With deferred billing reimbursement you will be required to apply for TA each session through your employer or third-party tuition provider, and you will be charged <em><span class="placeholder placeholder-not-bold">(insert days)</span></em> after your session ends. This means when the session ends you may submit your required documents to your employer for reimbursement, and then as previously mentioned you will be charged the amount we discussed per session <em><span class="placeholder placeholder-not-bold">(insert days)</span></em> after the session ends.</p>
+                        <p>This will require you to place a credit or debit card on file with our student accounts department and sign a student payment agreement to set up the recurring payment of <em><span class="placeholder placeholder-not-bold">(insert per session amount)</span></em> per session. You will also need to provide a current pay stub dated within 45 days of the session start date.</p>
+                        <p>The remainder of your tuition may be covered by CTU through the Commitment Grant for as long as you remain eligible. Our Finance Advisors will be available to assist and answer any questions you may have.</p>
+                    </div>
+                    
+                    <p>Have you thought about how you're going to fund your education?</p>
+                    
+                    <p>Ok, you will work with a CTU Finance Advisor and they'll help guide you through the financial aid process, but I can cover the basics for you.</p>
+                    
+                    <p>When people think of financial aid they typically think of the FAFSA which is the Free Application for Federal Student Aid and is available for those who apply and qualify. However, it's important to know that financial aid is actually a combination of sources which may include federal grants and loans, institutional grants or scholarships, private educational loans, or tuition assistance. Students also have the option to set up a payment plan. Does that make sense? The first step in the process is to fill out the FAFSA. I'll help you get started with that in a few minutes.</p>
+                    
+                    <h3 class="section-subheading">Tuition</h3>
+                    
+                    <p>Ok, let's talk about the tuition.</p>
+                    
+                    <div class="toggle-container">
+                        <label class="toggle-label conditional-text">COS Tuition</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="cos-tuition-toggle" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="conditional-box" id="cos-tuition-box" style="display: none;">
+                        <p class="conditional-instruction"><span class="conditional-text"><em>Do not reference the Program Fact Sheet when sharing tuition; instead reference the appropriate COS Tuition &amp; Fees Schedule.</em></span></p>
+                        <p class="conditional-instruction"><span class="conditional-text">Click <a href="#" class="link">here</a> for COS Tuition &amp; Fees Schedule.</span></p>
+                    </div>
+                    
+                    <p><strong>The cost per credit hour for the (<span class="placeholder">insert degree program and specialization/concentration</span>) is $<span class="underline-placeholder">_____</span>, and the total estimated program cost is $<span class="underline-placeholder">_____</span>. This includes the fees for this program calculated at a normal completion time. Your cost may vary based on credit load.</strong></p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text"><em>If BSCE:</em></span> Fees included in the total estimated program cost do not cover the cost of some required items such as safety goggles and screwdrivers; it is the student's responsibility to purchase these items.</p>
+                    
+                    <div class="tuition-option-buttons">
+                        <button type="button" class="action-btn tuition-option-btn" id="fast-track-btn">CTU Fast Track™</button>
+                        <button type="button" class="action-btn tuition-option-btn" id="masters-advantage-btn">Master's Advantage</button>
+                    </div>
+                    
+                    <div class="conditional-box tuition-option-box" id="fast-track-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">CTU Fast Track™</strong></p>
+                        <p>Now let's talk about how you can potentially save time and money with CTU Fast Track™. Fast Track allows you to test out of courses with a 70% <span class="conditional-text">(80% for MSHCM)</span> or higher at no additional cost, which means you may be able to graduate earlier and save on your total program cost. The exams are non-transferable courses.</p>
+                        <p>Your program has a total of <span class="underline-placeholder">___</span> Fast Track exams that are available in the (<span class="placeholder placeholder-not-bold">insert degree program and specialization/concentration</span>). If you take and pass all of the Fast Track exams available <strong>in your program, the remaining program credits would be <span class="underline-placeholder">___</span> and your remaining tuition cost would be <span class="underline-placeholder">___</span></strong>. However, <strong>you should not rely on potential Fast Track savings or eligibility</strong> when making an enrollment decision. Is this something you'd be interested in?</p>
+                    </div>
+                    
+                    <div class="conditional-box tuition-option-box" id="masters-advantage-box" style="display: none;">
+                        <p><strong class="tuition-option-heading">Master's Advantage</strong></p>
+                        <p class="conditional-instruction"><span class="conditional-text"><em>Reminder: Excludes BSCE, BSEE and, BSPSYCH.</em></span></p>
+                        <p>CTU offers something called the Master's Advantage which allows students the option to substitute two undergraduate level courses for two graduate courses. The benefit of doing this is that those two courses are charged at the undergraduate cost per credit hour rate rather than the graduate cost per credit hour rate. There are some eligibility requirements that would be monitored during your program, but if you'd like to be considered, I can indicate that when you enroll.</p>
+                        <p class="conditional-instruction"><span class="conditional-text"><em>Reminder: If the PS wants Master's Advantage, indicate this in the comments section in APC for online or notes section of Audit Request for ground when you submit the enrollment.</em></span></p>
+                    </div>
+                    
+                    <p>We've talked about a lot today. Let's review what we've covered so far; your program of interest which is (<span class="placeholder placeholder-not-bold">insert program of interest</span>), what sets CTU apart, how long it'll take you to graduate, and tuition and funding options. So, let me pause, what questions do you have?</p>
+                    
+                    <p>After hearing about CTU, what are you most excited about?</p>
+                    
+                </div>
+
+                <!-- Conclusion Section Content -->
+                <div class="tab-section" id="conclusion-section">
+                    <!-- Section Title -->
+                    <div class="section-title">CONCLUSION</div>
+                    <!-- Red Separator -->
+                    <div class="separator"></div>
+                    
+                    <p>Our next steps are to complete the Admissions Application, start the FAFSA, and schedule our next appointment. I sent you an email; click on the link to access the Admissions Application using the username provided in the email. Make a note of your username and password because you'll also use that to log into the Virtual Campus.</p>
+                    
+                    <p class="conditional-instruction"><span class="conditional-text">If COS: If the PS is not already an inquiry in ADM, guide the PS to access the application from the Campus Presentation site and identify you as their Admissions Advisor on the application.</span></p>
+                    
+                    <div class="conclusion-buttons">
+                        <button type="button" class="action-btn conclusion-btn">Complete Application Now</button>
+                        <button type="button" class="action-btn conclusion-btn">Complete Application Later</button>
+                        <button type="button" class="action-btn conclusion-btn">Not Interested</button>
+                    </div>
+                </div>
+            </div>
+            </div><!-- /.content-box -->
+
+            <!-- Footer Links -->
+            <footer class="content-footer">
+                <a href="#" class="footer-link">CTU Application Reminders</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Admissions Application Guide</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">CTU Admissions FAQ</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Phone Number Mask Talking Points</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Code of Conduct Statement</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">Appointment Script</a>
+            </footer>
+            </div><!-- /.content-main -->
+            </div><!-- /.content-column -->
+
+            <div class="program-selector">
+                <div class="program-selector-inner">
+                <select id="programSelect" class="program-dropdown">
+                    <option value="">Select Program</option>
+                    <option value="ASACC">ASACC</option>
+                    <option value="ASBA">ASBA</option>
+                    <option value="ASHAS">ASHAS</option>
+                    <option value="ASM">ASM</option>
+                    <option value="" disabled>---------- BACHELOR DEGREES ----------</option>
+                    <option value="BSACC">BSACC</option>
+                    <option value="BSBA">BSBA</option>
+                    <option value="BSBA - Business Development">BSBA - Business Development</option>
+                    <option value="BSBA - Data Analytics">BSBA - Data Analytics</option>
+                    <option value="BSBA - Digital Marketing">BSBA - Digital Marketing</option>
+                    <option value="BSBA - Finance">BSBA - Finance</option>
+                    <option value="BSBA - Healthcare Management">BSBA - Healthcare Management</option>
+                    <option value="BSBA - Human Resource Management">BSBA - Human Resource Management</option>
+                    <option value="BSBA - Information Technology">BSBA - Information Technology</option>
+                    <option value="BSBA - Logistics/Supply Chain Management">BSBA - Logistics/Supply Chain Management</option>
+                    <option value="BSBA - Management">BSBA - Management</option>
+                    <option value="BSBA - Marketing">BSBA - Marketing</option>
+                    <option value="BSCE">BSCE</option>
+                    <option value="BSCS">BSCS</option>
+                    <option value="BSCS - Cybersecurity Engineering">BSCS - Cybersecurity Engineering</option>
+                    <option value="BSCS - Data Science">BSCS - Data Science</option>
+                    <option value="BSCS - Software Engineering">BSCS - Software Engineering</option>
+                    <option value="BSCJ">BSCJ</option>
+                    <option value="BSCJ - Forensic Investigation">BSCJ - Forensic Investigation</option>
+                    <option value="BSCJ - Human Services">BSCJ - Human Services</option>
+                    <option value="BSEE">BSEE</option>
+                    <option value="BSHCM">BSHCM</option>
+                    <option value="BSHCM - Health Informatics">BSHCM - Health Informatics</option>
+                    <option value="BSIT">BSIT</option>
+                    <option value="BSM">BSM</option>
+                    <option value="BSM - Food Service Management">BSM - Food Service Management</option>
+                    <option value="BSN">BSN</option>
+                    <option value="BSPM">BSPM</option>
+                    <option value="BSPSYCH">BSPSYCH</option>
+                    <option value="BSPSYCH - Organizational Behavior">BSPSYCH - Organizational Behavior</option>
+                    <option value="" disabled>------------ MASTERS DEGREES ------------</option>
+                    <option value="MBA">MBA</option>
+                    <option value="MBA - Accounting">MBA - Accounting</option>
+                    <option value="MBA - Data Analytics">MBA - Data Analytics</option>
+                    <option value="MBA - Entrepreneurship">MBA - Entrepreneurship</option>
+                    <option value="MBA - Finance">MBA - Finance</option>
+                    <option value="MBA - Healthcare Management">MBA - Healthcare Management</option>
+                    <option value="MBA - Human Resource Management">MBA - Human Resource Management</option>
+                    <option value="MBA - Marketing">MBA - Marketing</option>
+                    <option value="MBA - Operations/Supply Chain Management">MBA - Operations/Supply Chain Management</option>
+                    <option value="MBA - Project Management">MBA - Project Management</option>
+                    <option value="MSCS">MSCS</option>
+                    <option value="MSCS - Cybersecurity Engineering">MSCS - Cybersecurity Engineering</option>
+                    <option value="MSCS - Software Engineering">MSCS - Software Engineering</option>
+                    <option value="MSCJ">MSCJ</option>
+                    <option value="MSCJ - Homeland Security">MSCJ - Homeland Security</option>
+                    <option value="MSHCM">MSHCM</option>
+                    <option value="MSHCM - Informatics">MSHCM - Informatics</option>
+                    <option value="MSIT">MSIT</option>
+                    <option value="MSM">MSM</option>
+                    <option value="MSM - Organizational Leadership & Change">MSM - Organizational Leadership & Change</option>
+                    <option value="MSN - Family Nurse Practitioner">MSN - Family Nurse Practitioner</option>
+                    <option value="MSN - Nursing Administration">MSN - Nursing Administration</option>
+                    <option value="MSN - Nursing Education">MSN - Nursing Education</option>
+                    <option value="PGC - Family Nurse Practitioner">PGC - Family Nurse Practitioner</option>
+                </select>
+
+                <!-- Program details box (shown when a program is selected) -->
+                <div class="program-details-box" id="programDetailsBox" aria-hidden="true">
+                    <div class="program-details-title" id="programDetailsTitle"></div>
+                    <div class="program-details-section program-details-foundation" id="programFoundationSection" style="display: none;">
+                        <div class="program-details-section-header">Foundation Requirements</div>
+                    </div>
+                    <div class="program-details-section">
+                        <div class="program-details-section-header">PROGRAM LENGTH</div>
+                        <div class="program-details-length">
+                            <div class="program-details-length-item">
+                                <strong>Full Time:</strong>
+                                <span id="programLengthFullTime"></span>
+                                <span id="programLengthFullTimeLong" class="program-details-long"></span>
+                            </div>
+                            <div class="program-details-length-item">
+                                <strong>Standard:</strong>
+                                <span id="programLengthStandard"></span>
+                                <span id="programLengthStandardLong" class="program-details-long"></span>
+                            </div>
+                            <div class="program-details-length-item">
+                                <strong>Part Time:</strong>
+                                <span id="programLengthPartTime"></span>
+                                <span id="programLengthPartTimeLong" class="program-details-long"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-details-section">
+                        <div class="program-details-section-header">TUITION</div>
+                        <div class="program-details-tuition">
+                            <div class="program-details-civ">
+                                <strong>CIV</strong>
+                                <span id="programTuitionCivPch"></span>
+                                <span id="programTuitionCivTotal"></span>
+                            </div>
+                            <div class="program-details-mil">
+                                <strong>MIL</strong>
+                                <span id="programTuitionMilPch"></span>
+                                <span id="programTuitionMilTotal"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-details-section">
+                        <div class="program-details-section-header">FAST TRACK</div>
+                        <p class="program-details-fast-track-intro">Available Fast Track Exams: <span id="programFastTrackExams"></span></p>
+                        <div class="program-details-tuition">
+                            <div class="program-details-civ">
+                                <strong>CIV Remaining</strong>
+                                <span id="programFastTrackCivCredits"></span>
+                                <span id="programFastTrackCivTuition"></span>
+                            </div>
+                            <div class="program-details-mil">
+                                <strong>MIL Remaining</strong>
+                                <span id="programFastTrackMilCredits"></span>
+                                <span id="programFastTrackMilTuition"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BSN-only program details (4 dropdowns + Fast Track) -->
+                <div class="program-details-box program-details-box-bsn" id="programDetailsBoxBSN" aria-hidden="true">
+                    <div class="program-details-title">BSN</div>
+                    <div class="program-details-section">
+                        <div class="program-details-section-header">PROGRAM LENGTH/TUITION</div>
+                        <div class="bsn-dropdowns">
+                            <details class="bsn-details">
+                                <summary class="bsn-summary">▼ Nursing Diploma w/o Cert OR Work Experience ▼</summary>
+                                <div class="bsn-dropdown-inner">
+                                    <div class="program-details-length">
+                                        <div class="program-details-length-item">
+                                            <strong>Full Time</strong>
+                                            <span>19 mos.</span>
+                                            <span class="program-details-long">(1 yr. 7 mos.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Standard</strong>
+                                            <span>27 mos.</span>
+                                            <span class="program-details-long">(2 yr. 3 mos.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Part Time</strong>
+                                            <span>38 mos.</span>
+                                            <span class="program-details-long">(3 yr. 2 mos.)</span>
+                                        </div>
+                                    </div>
+                                    <div class="program-details-section-header program-details-subheader">TUITION</div>
+                                    <div class="program-details-tuition">
+                                        <div class="program-details-civ">
+                                            <strong>CIV</strong>
+                                            <span>$260 PCH</span>
+                                            <span>$16,200 to $30,820 total program cost</span>
+                                        </div>
+                                        <div class="program-details-mil">
+                                            <strong>MIL</strong>
+                                            <span>$210 PCH</span>
+                                            <span>$12,075 to $22,995 total program cost</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="bsn-details">
+                                <summary class="bsn-summary">▼ Nursing Diploma w/Cert AND Work Experience ▼</summary>
+                                <div class="bsn-dropdown-inner">
+                                    <div class="program-details-length">
+                                        <div class="program-details-length-item">
+                                            <strong>Full Time</strong>
+                                            <span>19 mos.</span>
+                                            <span class="program-details-long">(1 yr. 7 mos.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Standard</strong>
+                                            <span>24 mos.</span>
+                                            <span class="program-details-long">(2 yr.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Part Time</strong>
+                                            <span>35 mos.</span>
+                                            <span class="program-details-long">(2 yr. 11 mos.)</span>
+                                        </div>
+                                    </div>
+                                    <div class="program-details-section-header program-details-subheader">TUITION</div>
+                                    <div class="program-details-tuition">
+                                        <div class="program-details-civ">
+                                            <strong>CIV</strong>
+                                            <span>$260 PCH</span>
+                                            <span>$16,200 to $30,820 total program cost</span>
+                                        </div>
+                                        <div class="program-details-mil">
+                                            <strong>MIL</strong>
+                                            <span>$210 PCH</span>
+                                            <span>$12,075 to $22,995 total program cost</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="bsn-details">
+                                <summary class="bsn-summary">▼ ADN w/o Cert OR Work Experience ▼</summary>
+                                <div class="bsn-dropdown-inner">
+                                    <div class="program-details-length">
+                                        <div class="program-details-length-item">
+                                            <strong>Full Time</strong>
+                                            <span>11 mos.</span>
+                                            <span class="program-details-long"></span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Standard</strong>
+                                            <span>13 mos.</span>
+                                            <span class="program-details-long">(1 yr. 1 mos.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Part Time</strong>
+                                            <span>22 mos.</span>
+                                            <span class="program-details-long">(1 yr. 10 mos.)</span>
+                                        </div>
+                                    </div>
+                                    <div class="program-details-section-header program-details-subheader">TUITION</div>
+                                    <div class="program-details-tuition">
+                                        <div class="program-details-civ">
+                                            <strong>CIV</strong>
+                                            <span>$260 PCH</span>
+                                            <span>$16,200 to $30,820 total program cost</span>
+                                        </div>
+                                        <div class="program-details-mil">
+                                            <strong>MIL</strong>
+                                            <span>$210 PCH</span>
+                                            <span>$12,075 to $22,995 total program cost</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="bsn-details">
+                                <summary class="bsn-summary">▼ ADN w/Cert AND Work Experience ▼</summary>
+                                <div class="bsn-dropdown-inner">
+                                    <div class="program-details-length">
+                                        <div class="program-details-length-item">
+                                            <strong>Full Time</strong>
+                                            <span>11 mos.</span>
+                                            <span class="program-details-long"></span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Standard</strong>
+                                            <span>13 mos.</span>
+                                            <span class="program-details-long">(1 yr. 1 mos.)</span>
+                                        </div>
+                                        <div class="program-details-length-item">
+                                            <strong>Part Time</strong>
+                                            <span>19 mos.</span>
+                                            <span class="program-details-long">(1 yr. 7 mos.)</span>
+                                        </div>
+                                    </div>
+                                    <div class="program-details-section-header program-details-subheader">TUITION</div>
+                                    <div class="program-details-tuition">
+                                        <div class="program-details-civ">
+                                            <strong>CIV</strong>
+                                            <span>$260 PCH</span>
+                                            <span>$16,200 to $30,820 total program cost</span>
+                                        </div>
+                                        <div class="program-details-mil">
+                                            <strong>MIL</strong>
+                                            <span>$210 PCH</span>
+                                            <span>$12,075 to $22,995 total program cost</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="program-details-section">
+                        <div class="program-details-section-header">FAST TRACK</div>
+                        <p class="program-details-fast-track-intro">Available Fast Track Exams: N/A</p>
+                        <div class="program-details-tuition">
+                            <div class="program-details-civ">
+                                <strong>CIV Remaining</strong>
+                                <span>N/A</span>
+                                <span></span>
+                            </div>
+                            <div class="program-details-mil">
+                                <strong>MIL Remaining</strong>
+                                <span>N/A</span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
