@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome Call</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Full-width header banner -->
+  <header class="hero">
+    <div class="hero-stripes" aria-hidden="true"></div>
+    <img src="images/Welcome_call_banner.png" alt="CI - App Due Follow Up Call" class="hero-logo" />
+  </header>
+
+  <div class="page">
+    <!-- Left sidebar -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="chat-toggle-wrap">
+        <span id="chatToggleLabel" class="chat-text-label">Chat Off</span>
+        <button id="chatToggle" class="chat-card" type="button" aria-pressed="false" aria-label="Chat formatting toggle">
+          <img
+            id="chatToggleImg"
+            src="images/Chat_icon_off.svg"
+            data-on-src="images/Chat_icon_on.svg"
+            data-off-src="images/Chat_icon_off.svg"
+            alt="Chat On/Off"
+            class="chat-img"
+          />
+        </button>
+      </div>
+      <div class="military-toggle-wrap">
+        <span id="militaryToggleLabel" class="military-label">Military</span>
+        <button id="militaryToggle" class="chat-card military-btn" type="button" aria-pressed="false" aria-label="Military toggle">
+          <img
+            id="militaryToggleImg"
+            src="images/Military_icon_off.svg"
+            data-on-src="images/Military_icon_on.svg"
+            data-off-src="images/Military_icon_off.svg"
+            alt="Military Off"
+            class="military-img"
+          />
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Content -->
+      <section class="sheet" aria-label="Script Content">
+        <p>
+          Hi, <span class="paren-black">(</span><span class="red italic chat-placeholder">student name</span><span class="paren-black">)</span>! This is <span class="paren-black">(</span><span class="red italic chat-placeholder">advisor name</span><span class="paren-black">)</span>, your Admissions Advisor from CTU and <strong>we are speaking on a recorded line.</strong> How are you?
+        </p>
+
+        <p>
+          Today, I want to talk about how you can incorporate school into your daily routine, check the status of your transcripts and financial aid, and show you a couple more items on the Virtual Campus. Please grab a pen and something to take notes on.
+        </p>
+
+        <p>
+          Let's talk about your daily schedule. We briefly discussed your schedule during our interview, but remind me; what does your typical day look like?
+        </p>
+
+        <p>
+          When do you normally have free time that you could devote to school?
+        </p>
+
+        <p class="military-only">
+          Will you have any deployments or annual training?
+        </p>
+
+        <p class="red italic">
+          Help your student create a tentative schedule for their first session.
+        </p>
+
+        <p class="red italic">
+          If your student needs additional support, provide the Time Management activity located on the VC &gt; Student Services &gt; Access the Student Success Center &gt; Student Success Skills &gt; Time Management.
+        </p>
+
+        <div class="cos-toggle-block">
+          <span class="cos-toggle-title">COS Students</span>
+          <label class="cos-switch" for="cosToggle" aria-label="COS Students toggle">
+            <input type="checkbox" id="cosToggle" class="cos-checkbox" aria-checked="false">
+            <span class="cos-slider"></span>
+          </label>
+          <div class="cos-content-box" id="cosContentBox" hidden>
+            <p class="cos-content-text">When you arrive to the campus for your first on-campus class, there will be someone to direct you to security to get your photo taken and receive your ID badge. You'll want to come a little early, especially if you would like to meet with your Finance Advisor, Student Success Coach, or to drop off documents.</p>
+          </div>
+        </div>
+
+        <p>
+          Let's review the status of your transcripts.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/Admissions%20FAQ/index.html" class="footer-link">CTU Admissions FAQ</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/FAFSA%20FAQ/index.html" class="footer-link">FAFSA FAQ</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="https://share.articulate.com/LUivViGeWwqNsC-kExFKb" class="footer-link">Virtual Campus &amp; Mobile App Guide</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/KC/index.html" class="footer-link">Admissions Knowledge Center</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
