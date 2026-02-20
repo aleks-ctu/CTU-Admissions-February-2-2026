@@ -1,0 +1,241 @@
+:root{
+  --bg: #b9b9b9;
+  --sidebar: #a6a6a6;
+  --hero: #1b1b1b;
+  --sheet: #f7f7f7;
+  --border-red: #ff0000;
+  --text: #111;
+  --muted: #666;
+  --link: #1a4bff;
+  --switch-on: #1e88ff;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif !important;
+  /* Match the sidebar tone to avoid a visible seam between panels */
+  background: var(--sidebar);
+  color: var(--text);
+  font-size: 12px;
+}
+
+/* Layout */
+.page{
+  min-height: 100vh;
+  display:flex;
+}
+.sidebar{
+  width: 120px;
+  background: var(--sidebar);
+  padding: 40px 10px 14px 10px;
+}
+.sidebar-label{
+  font-size: 12px;
+  color:#fff;
+  opacity:.95;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+.chat-card{
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+.chat-card:focus-visible{
+  outline: 3px solid rgba(255,255,255,.65);
+  outline-offset: 3px;
+}
+.chat-img{
+  width: 100%;
+  max-width: 96px;
+  height: auto;
+  display:block;
+}
+.chat-icon{
+  width: 64px;
+  height: 64px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  opacity: .9;
+}
+
+.main{
+  flex:1;
+  min-width: 0;
+  /* Ensure the area behind the sheet matches the sidebar (no lighter strip) */
+  background: var(--sidebar);
+}
+
+/* Hero header (top banner) */
+.hero{
+  position: relative;
+  background: #000;
+  display:block;
+  overflow:hidden;
+}
+.hero-stripes{
+  display:none; /* hide decorative background so only banner shows */
+}
+.hero-logo{
+  display:block;
+  width: 100%;
+  height: auto;
+}
+
+/* Sheet (white box) */
+.sheet{
+  width: min(1200px, calc(100% - 40px));
+  /* Add extra grey space between the top banner and the white sheet */
+  /* Left-align the sheet so it sits closer to the sidebar (less empty gap on wide screens) */
+  margin: 40px 20px 40px 16px;
+  background: var(--sheet);
+  border: 1px solid var(--border-red);
+  padding: 16px 18px 10px;
+}
+
+/* On smaller screens, center the sheet again so it doesn't feel cramped */
+@media (max-width: 900px){
+  .sheet{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Text */
+.lead{
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.hint{
+  color: var(--border-red);
+  font-style: italic;
+  font-weight: 700;
+}
+/* When chat is OFF, the placeholders remain bold but lose red + italic */
+body.chat-off .hint{
+  color: inherit;
+  font-style: normal;
+  font-weight: 700;
+}
+.red{
+  color: var(--border-red);
+}
+.italic{ font-style: italic; }
+.link{
+  color: var(--link);
+  text-decoration: underline;
+}
+.link:hover{ text-decoration: none; }
+
+.indent{
+  padding-left: 56px;
+}
+
+/* toggles row */
+.toggles{
+  display:flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  margin: 6px 0 6px 0;
+}
+.toggle-block{
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 260px;
+}
+.toggle-label{
+  color: var(--border-red);
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* dashed divider + status box */
+.dash{
+  border: 0;
+  border-top: 1px dashed var(--border-red);
+  margin: 12px 0;
+}
+
+.status-box{
+  border: 1px dashed var(--border-red);
+  padding: 14px 16px;
+  margin: 0 0 14px 0;
+  background: #fff;
+}
+.status-text{
+  margin:0;
+  font-size: 12px;
+}
+
+/* Switch */
+.switch{
+  position: relative;
+  display:inline-block;
+  width: 92px;
+  height: 16px;
+}
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider{
+  position:absolute;
+  cursor:pointer;
+  inset:0;
+  background: #bcbcbc;
+  border-radius: 999px;
+  transition: .2s ease;
+}
+.slider:before{
+  content:"";
+  position:absolute;
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  top: 2px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,.25);
+  transition: .2s ease;
+}
+.switch input:checked + .slider{
+  background: var(--switch-on);
+}
+.switch input:checked + .slider:before{
+  transform: translateX(74px);
+}
+
+/* footer */
+.bottom-space{ height: 18px; }
+.footer{
+  display:flex;
+  gap: 14px;
+  justify-content:center;
+  padding: 8px 0 2px;
+  font-size: 12px;
+}
+.footer-link{
+  color:#111;
+  text-decoration: underline;
+}
+.footer-link:hover{ text-decoration:none; }
+
+/* responsive tweaks */
+@media (max-width: 720px){
+  .sidebar{ width: 92px; }
+  .indent{ padding-left: 18px; }
+  .sheet{ width: calc(100% - 22px); }
+}

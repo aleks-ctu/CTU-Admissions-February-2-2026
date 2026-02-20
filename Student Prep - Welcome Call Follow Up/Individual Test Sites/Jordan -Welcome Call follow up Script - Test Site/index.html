@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome Call Follow Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Full-width header banner -->
+  <header class="hero">
+    <div class="hero-stripes" aria-hidden="true"></div>
+    <img src="images/Welcome_call_FollowUp_banner.png" alt="CI - App Due Follow Up Call" class="hero-logo" />
+  </header>
+
+  <div class="page">
+    <!-- Left sidebar -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="military-toggle-wrap">
+        <span id="militaryToggleLabel" class="military-label">Military</span>
+        <button id="militaryToggle" class="chat-card military-btn" type="button" aria-pressed="false" aria-label="Military toggle">
+          <img
+            id="militaryToggleImg"
+            src="images/Military_icon_off.svg"
+            data-on-src="images/Military_icon_on.svg"
+            data-off-src="images/Military_icon_off.svg"
+            alt="Military Off"
+            class="military-img"
+          />
+        </button>
+      </div>
+      <div class="chat-toggle-wrap">
+        <span id="chatToggleLabel" class="chat-text-label">Chat Off</span>
+        <button id="chatToggle" class="chat-card" type="button" aria-pressed="false" aria-label="Chat formatting toggle">
+          <img
+            id="chatToggleImg"
+            src="images/Chat_icon_off.svg"
+            data-on-src="images/Chat_icon_on.svg"
+            data-off-src="images/Chat_icon_off.svg"
+            alt="Chat On/Off"
+            class="chat-img"
+          />
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Content -->
+      <section class="sheet" aria-label="Script Content">
+        <p>
+          Hi, <span class="paren-black">(</span><span class="red italic chat-placeholder">student name</span><span class="paren-black">)</span>! This is <span class="paren-black">(</span><span class="red italic chat-placeholder">advisor name</span><span class="paren-black">)</span>, your Admissions Advisor from CTU and <strong>we are speaking on a recorded line.</strong> How are you?
+        </p>
+
+        <p>
+          Today, I want to talk about how you can incorporate school into your daily routine, check the status of your transcripts and financial aid, and show you a couple more items on the Virtual Campus. Please grab a pen and something to take notes on.
+        </p>
+
+        <p>
+          Let's talk about your daily schedule. We briefly discussed your schedule during our interview, but remind me; what does your typical day look like?
+        </p>
+
+        <p>
+          When do you normally have free time that you could devote to school?
+        </p>
+
+        <p class="military-only">
+          Will you have any deployments or annual training?
+        </p>
+
+        <p class="red italic">
+          Help your student create a tentative schedule for their first session.
+        </p>
+
+        <p class="red italic">
+          If your student needs additional support, provide the Time Management activity located on the VC &gt; Student Services &gt; Access the Student Success Center &gt; Student Success Skills &gt; Time Management.
+        </p>
+
+        <div class="cos-toggle-block">
+          <span class="cos-toggle-title">COS Students</span>
+          <label class="cos-switch" for="cosToggle" aria-label="COS Students toggle">
+            <input type="checkbox" id="cosToggle" class="cos-checkbox" aria-checked="false">
+            <span class="cos-slider"></span>
+          </label>
+          <div class="cos-content-box" id="cosContentBox" hidden>
+            <p class="cos-content-text">When you arrive to the campus for your first on-campus class, there will be someone to direct you to security to get your photo taken and receive your ID badge. You'll want to come a little early, especially if you would like to meet with your Finance Advisor, Student Success Coach, or to drop off documents.</p>
+          </div>
+        </div>
+
+        <p>
+          Let's review the status of your transcripts.
+        </p>
+
+        <div class="transcript-buttons-block">
+          <div class="transcript-buttons-row">
+            <button type="button" id="pogBtn" class="script-btn" aria-expanded="false" aria-controls="pogContentBox">POG Not On File</button>
+            <button type="button" id="priorCollegeBtn" class="script-btn" aria-expanded="false" aria-controls="priorCollegeContentBox">If Student has Prior College</button>
+          </div>
+          <div class="script-content-box" id="pogContentBox" hidden>
+            <h3 class="script-content-title">POG Not On File</h3>
+            <p class="script-content-reminder">Reminder: Master's students and continuing students do not need POG.</p>
+            <p class="script-content-text">Like we discussed previously, one of the Admissions requirements is having proof of high school graduation. Do you have a copy of your diploma?</p>
+            <p class="script-content-text">When you have it ready, you can take a picture of it with your phone and upload it using the mobile app. Would you like me to walk you through that now so we can check it off the list?</p>
+            <div class="pog-toggles-row">
+              <div class="cos-toggle-block pog-toggle-block">
+                <span class="cos-toggle-title">If no</span>
+                <label class="cos-switch" for="pogToggleNo" aria-label="If no toggle">
+                  <input type="checkbox" id="pogToggleNo" class="cos-checkbox pog-toggle" aria-checked="false">
+                  <span class="cos-slider"></span>
+                </label>
+              </div>
+              <div class="cos-toggle-block pog-toggle-block">
+                <span class="cos-toggle-title">If yes</span>
+                <label class="cos-switch" for="pogToggleYes" aria-label="If yes toggle">
+                  <input type="checkbox" id="pogToggleYes" class="cos-checkbox pog-toggle" aria-checked="false">
+                  <span class="cos-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="pog-ifno-box" id="pogIfNoBox" hidden>
+              <p class="pog-ifno-text">No problem! Just a reminder that we need valid proof of high school graduation prior to the first day of your 2nd quarter and before Financial Aid can disburse any funds.</p>
+            </div>
+            <div class="pog-ifyes-box" id="pogIfYesBox" hidden>
+              <p class="pog-conditional-text">Ok, put me on speaker so you can open the CTU mobile app. Let me know once you have it open.</p>
+              <p class="pog-conditional-text">Tap on "More" at the bottom of the screen then "Upload a Document". Tap on "Select File(s)" and use your camera to take a picture of your document. When ready, tap "Send" and you're done.</p>
+              <p class="pog-conditional-text pog-conditional-red">Students may also email a copy of their POG to Retrieval@coloradotech.edu.</p>
+            </div>
+          </div>
+          <div class="script-content-box" id="priorCollegeContentBox" hidden>
+            <h3 class="script-content-title">If Student has Prior College</h3>
+            <p class="script-content-text">As you know, we need to obtain all your official college transcripts. A transcript is only considered official when it is sent directly from the issuing school, either in a sealed envelope mailed to us or sent electronically directly to our Registrar. CTU takes the initiative to help collect these, but it is your responsibility to ensure all transcripts are on file. Keep an eye on your email; if any of your prior schools don't accept an electronic signature, we may send you a new transcript request form asking you to wet sign it.</p>
+            <p class="script-content-text">If you happen to have any unofficial transcripts or can print them from your school's website, I encourage you to send those to us. Our Registrar Evaluation Services (RES) department can review unofficial transcripts while we wait for your officials. Do you have a copy of your unofficial transcripts or access to your school's website to print them from there?</p>
+            <div class="pog-toggles-row prior-college-toggles-row">
+              <div class="cos-toggle-block pog-toggle-block">
+                <span class="cos-toggle-title">If yes</span>
+                <label class="cos-switch" for="priorCollegeToggleYes" aria-label="If yes toggle">
+                  <input type="checkbox" id="priorCollegeToggleYes" class="cos-checkbox prior-college-toggle" aria-checked="false">
+                  <span class="cos-slider"></span>
+                </label>
+              </div>
+              <div class="cos-toggle-block pog-toggle-block">
+                <span class="cos-toggle-title">If no</span>
+                <label class="cos-switch" for="priorCollegeToggleNo" aria-label="If no toggle">
+                  <input type="checkbox" id="priorCollegeToggleNo" class="cos-checkbox prior-college-toggle" aria-checked="false">
+                  <span class="cos-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="pog-ifno-box prior-college-ifyes-box" id="priorCollegeIfYesBox" hidden>
+              <p class="pog-ifno-text">Great, you can take a photo and upload those using the mobile app, or you can scan and email them to me. Let's get that taken care of today so RES can begin tentatively reviewing for potential credit.</p>
+            </div>
+            <div class="pog-ifno-box prior-college-ifno-box" id="priorCollegeIfNoBox" hidden>
+              <p class="pog-ifno-text">That's okay, go ahead and write that down as a "to do" for yourself this week so RES can review them for potential credit. You can call your school, or you may be able to order them online from your school's website.</p>
+              <p class="prior-college-red-italic">Students may also email a copy of their unofficial transcripts to Retrieval@coloradotech.edu.</p>
+              <p class="prior-college-red-italic prior-college-four-lines">Official transcripts can be mailed to (or dropped off at the campus if COS student):<br><span class="prior-college-address-inline">Colorado Technical University - Transcript Processing<br>P.O. Box 681369<br>Schaumburg, IL 60168</span></p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          What questions do you have about your transcripts?
+        </p>
+
+        <div class="reentry-block">
+          <div class="cos-toggle-block reentry-toggle-block">
+            <span class="cos-toggle-title">ReEntry Students</span>
+            <label class="cos-switch" for="reentryToggle" aria-label="ReEntry Students toggle">
+              <input type="checkbox" id="reentryToggle" class="cos-checkbox" aria-checked="false">
+              <span class="cos-slider"></span>
+            </label>
+            <div class="cos-content-box" id="reentryContentBox" hidden>
+              <p class="reentry-red-italic">If applicable, verify all transcripts are on file from your student's previous enrollment.</p>
+              <p class="reentry-indent reentry-degree-para"><span class="reentry-label">If degree plan is completed:</span> It looks like your degree plan has been updated for your class(es) starting on <span class="paren-black">(</span><span class="red italic chat-placeholder">insert start date</span><span class="paren-black">)</span>. I encourage you to review your degree plan and let me know if you have any questions.</p>
+              <p class="reentry-indent reentry-degree-para"><span class="reentry-label">If degree plan is NOT completed:</span> I don't see that your degree plan is created yet. RES will email us once it's complete, so you'll be able to view your degree plan then.</p>
+            </div>
+          </div>
+          <p class="reentry-red-italic">If your student's program has prerequisites or foundation requirements, discuss as needed.</p>
+          <p class="script-content-text">Next, let's get you logged into the Virtual Campus so I can show you where to locate your student email. Is it easier to log in from your computer or the mobile app?</p>
+          <p class="reentry-indent"><span class="reentry-label">Computer:</span> Once logged in, click on the envelope icon in the top-right hand corner.</p>
+          <p class="reentry-indent"><span class="reentry-label">Mobile App:</span> Open the CTU mobile app and tap on the "Connect" icon on the bottom of the screen.</p>
+          <p class="script-content-text">This is where you access your CTU student email account. You may have to set it up the first time you use it; simply follow the prompts if so. Your CTU student email account is what your instructors and other departments will use to reach out to you.</p>
+          <p class="script-content-text">Another thing I want to show you is our CTU Student Community. This is a social platform where you can connect with your peers by sharing stories or asking for advice. Click on the group icon in the upper right corner of the screen. A new window will open, and you can create your profile.</p>
+          <p class="script-content-text">Something else I'd like you to do in preparation for class is to download Zoom on all of the devices you plan to use for your coursework. Zoom is what you will use to access your live chats.</p>
+        </div>
+
+        <div class="fast-track-block">
+          <button type="button" id="fastTrackBtn" class="script-btn" aria-expanded="false" aria-controls="fastTrackContentBox">Fast Track</button>
+          <div class="script-content-box fast-track-content-box" id="fastTrackContentBox" hidden>
+            <p class="script-content-text">Remind me, were you interested in taking any fast track exams?</p>
+            <p class="fast-track-red-italic">Determine what fast track exam(s) your student would like to begin with and guide them on how to schedule them using the mobile app for ONL students and for COS students, send the scheduling request to Student Success in the "Admissions to Student Success" Teams chat.</p>
+            <p class="fast-track-ref">Reference the <a href="file:///S:/CTU%20Admissions/Live%20Sites/Admissions%20FAQ/index.html" class="link">CTU Admissions FAQs</a>, if needed.</p>
+          </div>
+        </div>
+
+        <div class="cos-toggle-block doctoral-toggle-block">
+          <span class="cos-toggle-title">Doctoral Students</span>
+          <label class="cos-switch" for="doctoralToggle" aria-label="Doctoral Students toggle">
+            <input type="checkbox" id="doctoralToggle" class="cos-checkbox" aria-checked="false">
+            <span class="cos-slider"></span>
+          </label>
+          <div class="cos-content-box" id="doctoralContentBox" hidden>
+            <p class="cos-content-text">Now, click More to the right of the Messenger icon then click on "University Resources". Scroll down until you see the "Library and Bookshelf" section. Click on "Doctoral Resource Center"; this is a great place to find additional information about symposium, resources to support you in your library and dissertation research, citation resources and various other items to support you throughout your program.</p>
+            <p class="cos-content-text">Lastly, let's review your financial aid progress by going back to the Virtual Campus and clicking on "Finances" on the left side of the screen, then "Financial Aid". What outstanding documents do you see there?</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/Admissions%20FAQ/index.html" class="footer-link">CTU Admissions FAQ</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/FAFSA%20FAQ/index.html" class="footer-link">FAFSA FAQ</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="https://share.articulate.com/LUivViGeWwqNsC-kExFKb" class="footer-link">Virtual Campus &amp; Mobile App Guide</a>
+    <span class="footer-sep" aria-hidden="true"></span>
+    <a href="file:///S:/CTU%20Admissions/Live%20Sites/KC/index.html" class="footer-link">Admissions Knowledge Center</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

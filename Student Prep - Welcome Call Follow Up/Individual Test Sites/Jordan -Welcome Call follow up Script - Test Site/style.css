@@ -1,0 +1,834 @@
+:root{
+  --bg: #b9b9b9;
+  --sidebar: #a6a6a6;
+  --hero: #1b1b1b;
+  --sheet: #f7f7f7;
+  --border-red: #ff0000;
+  --text: #111;
+  --muted: #666;
+  --link: #1a4bff;
+  --switch-on: #1e88ff;
+}
+
+*{ box-sizing: border-box; }
+html{
+  height: 100%;
+}
+html,body{
+  overflow-x: hidden;
+}
+body{
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px; /* space for fixed footer so content isn't hidden */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--sidebar);
+  color: var(--text);
+  font-size: 12px;
+}
+/* Normal view: no vertical scroll. When zoomed/narrow: allow scroll so nothing is cut off */
+html:not(.zoom-allows-scroll) body{
+  overflow-y: hidden;
+  height: 100%;
+}
+html.zoom-allows-scroll,
+html.zoom-allows-scroll body{
+  overflow-y: auto;
+  overflow-x: auto;
+  min-height: 100%;
+  height: auto;
+}
+/* When zoomed: allow main to scroll only; keep sidebar on left (no layout change) */
+html.zoom-allows-scroll .main{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Layout */
+.page{
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+.hero{
+  flex-shrink: 0;
+}
+.sidebar{
+  width: 120px;
+  min-width: 120px;
+  flex-shrink: 0;
+  background: var(--sidebar);
+  padding: 40px 10px 14px 10px;
+  overflow: visible;
+}
+.sidebar-label{
+  font-size: 12px;
+  color:#fff;
+  opacity:.95;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+.chat-card{
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+/* Match military button to chat button: no visible box, same as sidebar */
+.military-btn,
+.military-toggle-wrap .chat-card{
+  background: var(--sidebar) !important;
+  background-color: var(--sidebar) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.military-btn:hover,
+.military-btn:active,
+.military-btn:focus,
+.military-toggle-wrap .chat-card:hover,
+.military-toggle-wrap .chat-card:active,
+.military-toggle-wrap .chat-card:focus{
+  background: var(--sidebar) !important;
+  background-color: var(--sidebar) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+.chat-card:focus-visible{
+  outline: 3px solid rgba(255,255,255,.65);
+  outline-offset: 3px;
+}
+.chat-toggle-wrap,
+.military-toggle-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+  width: 90px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.chat-toggle-wrap{
+  min-height: 102px;
+  margin-top: 50px;
+}
+.chat-text-label{
+  display: block;
+  width: 90px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  margin-bottom: -10px;
+  box-sizing: border-box;
+}
+body.chat-on .chat-text-label{
+  color: rgb(178, 41, 46);
+}
+body.chat-off .chat-text-label{
+  color: #fff;
+}
+.chat-toggle-wrap .chat-card{
+  min-width: 90px;
+  min-height: 90px;
+  flex-shrink: 0;
+}
+.chat-toggle-wrap .chat-img{
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  object-fit: contain;
+}
+.military-toggle-wrap{
+  margin-top: 28px;
+  min-height: 88px;
+}
+.military-toggle-wrap .chat-card{
+  flex-shrink: 0;
+}
+.military-label{
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2px;
+}
+body.military-on .military-label{
+  color: rgb(178, 41, 46);
+}
+body.military-off .military-label{
+  color: #fff;
+}
+.military-img{
+  width: 100%;
+  max-width: 60px;
+  height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  opacity: 0.85;
+}
+.chat-label{
+  display: none; /* Hidden since button image already contains the text */
+}
+.chat-img{
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  display:block;
+}
+.chat-icon{
+  width: 64px;
+  height: 64px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  opacity: .9;
+}
+
+.main{
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 48px 60px 48px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hero header (top banner) */
+.hero{
+  position: relative;
+  background: #000;
+  display:block;
+  overflow:hidden;
+}
+.hero-stripes{
+  display:none; /* hide decorative background so only banner shows */
+}
+.hero-logo{
+  display:block;
+  width: 100%;
+  height: auto;
+}
+
+/* Sheet (white box) - centered with equal gutters, large box */
+.sheet{
+  width: 100%;
+  max-width: 1150px;
+  margin: 40px 0;
+  background: var(--sheet);
+  border: 1px solid var(--border-red);
+  padding: 24px 32px 18px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.35px;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 1550px){
+  .sheet{
+    max-width: min(1150px, calc(100vw - 120px - 96px));
+  }
+}
+
+/* Text in .sheet - 15px default */
+.lead{
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.45px;
+}
+.sheet p{
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.45px;
+  margin: 0 0 14px 0;
+}
+
+/* Wide screens: larger text (must come after base .lead / .sheet p to override) */
+@media (min-width: 1600px){
+  .sheet{
+    max-width: 1280px;
+    padding: 28px 36px 22px;
+    font-size: 17px !important;
+    line-height: 1.5;
+  }
+  .sheet p,
+  .sheet .lead,
+  .lead{
+    font-size: 17px !important;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+  }
+}
+
+@media (min-width: 1920px){
+  .sheet{
+    max-width: 1380px;
+    padding: 32px 42px 26px;
+    font-size: 19px !important;
+    line-height: 1.5;
+  }
+  .sheet p,
+  .sheet .lead,
+  .lead{
+    font-size: 19px !important;
+    line-height: 1.5;
+    margin: 0 0 18px 0;
+  }
+}
+
+@media (min-width: 2560px){
+  .sheet{
+    font-size: 21px !important;
+    line-height: 1.5;
+  }
+  .sheet p,
+  .sheet .lead,
+  .lead{
+    font-size: 21px !important;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+}
+
+.hint{
+  color: var(--border-red);
+  font-style: italic;
+  font-weight: 700;
+}
+/* When chat is ON, the placeholders remain bold but lose red + italic */
+body.chat-on .hint{
+  color: inherit;
+  font-style: normal;
+  font-weight: 700;
+}
+/* When chat is OFF (default): placeholders are red (hints visible)
+   When chat is ON (clicked): placeholders become black (hints hidden) */
+body.chat-on .sheet .chat-placeholder{
+  color: #111 !important;
+  font-style: italic;
+}
+.red{
+  color: var(--border-red);
+}
+.italic{ font-style: italic; }
+.link{
+  color: var(--link);
+  text-decoration: underline;
+}
+.link:hover{ text-decoration: none; }
+
+.indent{
+  padding-left: 56px;
+}
+
+/* toggles row */
+.toggles{
+  display:flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  margin: 6px 0 6px 0;
+}
+.toggle-block{
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 260px;
+}
+.toggle-label{
+  color: var(--border-red);
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* dashed divider + status box */
+.dash{
+  border: 0;
+  border-top: 1px dashed var(--border-red);
+  margin: 12px 0;
+}
+
+.status-box{
+  border: 1px dashed var(--border-red);
+  padding: 14px 16px;
+  margin: 0 0 14px 0;
+  background: #fff;
+}
+.status-text{
+  margin:0;
+  font-size: 12px;
+}
+
+/* Switch */
+.switch{
+  position: relative;
+  display:inline-block;
+  width: 92px;
+  height: 16px;
+}
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider{
+  position:absolute;
+  cursor:pointer;
+  inset:0;
+  background: #bcbcbc;
+  border-radius: 999px;
+  transition: .2s ease;
+}
+.slider:before{
+  content:"";
+  position:absolute;
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  top: 2px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0,0,0,.25);
+  transition: .2s ease;
+}
+.switch input:checked + .slider{
+  background: var(--switch-on);
+}
+.switch input:checked + .slider:before{
+  transform: translateX(74px);
+}
+
+/* Parentheses stay black; font size/style inherit from .sheet */
+.sheet .paren-black{
+  color: #111 !important;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+/* Military-only content: visible when military button is ON, hidden when OFF */
+body.military-off .military-only{
+  display: none !important;
+}
+body.military-on .military-only{
+  display: block;
+}
+
+/* COS Students toggle block */
+.cos-toggle-block{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 14px 0 14px 0;
+}
+.cos-toggle-title{
+  color: var(--border-red);
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.cos-switch{
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 26px;
+  cursor: pointer;
+}
+.cos-checkbox{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.cos-slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 28px;
+}
+.cos-switch:hover .cos-slider{
+  box-shadow: 2px 2px 4px 0px #af272f;
+}
+.cos-slider:before{
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  transition: 0.3s;
+}
+.cos-checkbox:checked + .cos-slider{
+  background: var(--switch-on);
+  box-shadow: 2px 2px 4px 0px #af272f;
+}
+.cos-checkbox:checked + .cos-slider:before{
+  transform: translateX(74px);
+}
+.cos-content-box{
+  border: 1px dotted var(--border-red);
+  padding: 14px 16px;
+  margin-top: 4px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.cos-content-box[hidden]{
+  display: none !important;
+}
+.cos-content-text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* Transcript section: two buttons that open content boxes (mirror COS toggle box style) */
+.transcript-buttons-block{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0 20px 0;
+}
+.transcript-buttons-row{
+  margin: 4px 0;
+}
+.transcript-buttons-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.script-btn{
+  appearance: none;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(145deg, #6c757d, #495057);
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  cursor: pointer;
+  transition: background .2s ease, box-shadow .2s ease, transform .35s ease;
+}
+.script-btn:hover{
+  background: linear-gradient(145deg, #33383d, #080c0f);
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.script-btn:active{
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+.script-btn[aria-expanded="true"]{
+  background: linear-gradient(145deg, #d83f43, #8c1f22);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.1);
+  transform: translateY(2px);
+}
+.script-btn[aria-expanded="true"]:hover{
+  background: linear-gradient(145deg, #33383d, #080c0f);
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.script-content-box{
+  border: 1px dotted var(--border-red);
+  padding: 14px 16px;
+  margin-top: 0;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.script-content-box[hidden]{
+  display: none !important;
+}
+.script-content-title{
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+  line-height: 1.5;
+  color: #111;
+}
+.script-content-reminder{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--border-red);
+  font-style: italic;
+}
+.script-content-text{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+.script-content-box .script-content-text:last-of-type{
+  margin-bottom: 14px;
+}
+.pog-toggles-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  align-items: flex-start;
+}
+.pog-toggle-block{
+  margin: 0;
+}
+.pog-ifno-box{
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.pog-ifno-box[hidden]{
+  display: none !important;
+}
+.pog-ifno-text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+.pog-ifyes-box{
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.pog-ifyes-box[hidden]{
+  display: none !important;
+}
+.pog-conditional-text{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+.pog-ifyes-box .pog-conditional-text:last-child{
+  margin-bottom: 0;
+}
+.pog-conditional-red{
+  color: var(--border-red);
+  font-style: italic;
+}
+.prior-college-toggles-row{
+  margin-bottom: 0;
+}
+.prior-college-reentry{
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+.prior-college-ifyes-box{
+  border: 1px dotted var(--border-red);
+}
+.prior-college-ifno-box{
+  border: 1px dotted var(--border-red);
+}
+.prior-college-red-italic{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--border-red);
+  font-style: italic;
+}
+.prior-college-four-lines{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--border-red);
+  font-style: italic;
+}
+.prior-college-address-inline{
+  display: block;
+  margin-top: 0;
+  padding-left: 10px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--border-red);
+  font-style: italic;
+}
+
+/* ReEntry Students section */
+.reentry-block{
+  margin-top: 24px;
+}
+.reentry-toggle-block{
+  margin: 0 0 22px 0;
+}
+.reentry-toggle-block .cos-content-box{
+  margin-top: 12px;
+}
+.reentry-degree-para{
+  margin-top: 14px;
+}
+.reentry-degree-para:first-of-type{
+  margin-top: 0;
+}
+.reentry-red-italic{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--border-red);
+  font-style: italic;
+}
+.reentry-indent{
+  margin: 0 0 14px 0;
+  padding-left: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+}
+.reentry-label{
+  color: var(--border-red);
+  font-style: italic;
+}
+
+/* Fast Track button and content */
+.fast-track-block{
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.fast-track-block .script-btn{
+  margin-bottom: 12px;
+}
+.fast-track-content-box{
+  margin-top: 0;
+}
+.fast-track-red-italic{
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--border-red);
+  font-style: italic;
+}
+.fast-track-ref{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--border-red);
+  font-style: italic;
+}
+.fast-track-ref .link{
+  color: var(--link);
+  text-decoration: underline;
+}
+.fast-track-ref .link:hover{
+  text-decoration: none;
+}
+.section-divider{
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 24px 0;
+}
+.doctoral-toggle-block{
+  margin: 20px 0 14px 0;
+}
+.doctoral-toggle-block .cos-content-box{
+  margin-top: 12px;
+}
+
+/* footer */
+.bottom-space{ height: 18px; }
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  background: var(--sidebar);
+}
+.footer-link{
+  color: #111;
+  text-decoration: underline;
+  padding: 0 2px;
+}
+.footer-link:hover{ color: #af272f; text-decoration: none; }
+.footer-sep{
+  display: inline-block;
+  width: 0;
+  height: 12px;
+  border-left: 1px solid #ccc;
+  margin: 0 2px;
+  flex-shrink: 0;
+  align-self: center;
+  box-sizing: content-box;
+}
+
+/* ========== Stacked layout: buttons below banner, main scrollable (narrow viewport or zoomed) ========== */
+/* Apply stacked layout when viewport is narrow */
+@media (max-width: 900px){
+  body{ padding-bottom: 40px; }
+  .page{ flex-direction: column; }
+  .sidebar{
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 10px;
+  }
+  .chat-toggle-wrap{ margin-top: 0; }
+  .main{
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px 24px;
+  }
+  .sheet{ margin: 20px auto; max-height: none; }
+}
+/* responsive tweaks (narrow + stacked) */
+@media (max-width: 720px){
+  .indent{ padding-left: 18px; }
+  .sheet{ 
+    width: calc(100% - 22px);
+    max-width: none;
+  }
+  .main{
+    padding-bottom: 24px;
+  }
+}
