@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CI - App Due Follow Up Call</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Full-width header banner -->
+  <header class="hero">
+    <div class="hero-stripes" aria-hidden="true"></div>
+    <img src="ci-app-due-banner.png" alt="CI - App Due Follow Up Call" class="hero-logo" />
+  </header>
+
+  <div class="page">
+    <!-- Left sidebar -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <button id="chatToggle" class="chat-card" type="button" aria-pressed="false" aria-label="Chat formatting toggle">
+        <img
+          id="chatToggleImg"
+          src="chatOnOff.png"
+          data-on-src="chatOnOff.png"
+          data-off-src="chatOff.png"
+          alt="Chat On/Off"
+          class="chat-img"
+        />
+      </button>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Content -->
+      <section class="sheet" aria-label="Script Content">
+        <p class="lead">
+          <strong>Hi <span class="hint">(insert name!)</span>! This is
+          <span class="hint">(state first and last name)</span> from Colorado Technical University and we are on a recorded line.
+          I'm calling to follow-up on your application for admissions. Just in case we get disconnected, here is my callback number
+          <span class="hint">(insert your direct line)</span>.</strong>
+        </p>
+
+        <div class="toggles" role="group" aria-label="Application Status">
+          <div class="toggle-block">
+            <div class="toggle-label">Application Complete</div>
+            <label class="switch">
+              <input id="toggleComplete" type="checkbox" />
+              <span class="slider" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="toggle-block">
+            <div class="toggle-label">Application is Incomplete/(Correction(s) Needed</div>
+            <label class="switch">
+              <input id="toggleCorrection" type="checkbox" />
+              <span class="slider" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <hr class="dash" />
+
+        <!-- Message box changes based on toggles -->
+        <div id="statusBox" class="status-box" hidden>
+          <p id="statusText" class="status-text"></p>
+        </div>
+
+        <p class="red italic">
+          Use the
+          <a
+            href="https://share.articulate.com/SZ-l7yBleVH37hb05SJRz"
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Admissions Application Guide</a
+          >
+          as needed.
+        </p>
+
+        <p class="red italic">
+          If the disclosures were not previously read to the PS OR if you are helping a PS complete their application for a buddy/peer,
+          <span style="text-decoration: underline;">you must</span> read the disclosures now.
+        </p>
+
+        <p>
+          Before we continue, I'd like to go through high level overview of the disclosures and Enrollment Agreement with you.
+          <strong>You'll also have an opportunity to read these documents thoroughly on your own as you complete your application.</strong>
+        </p>
+
+        <p>
+          <strong
+            >The Program Information Disclosure contains important information about your program.</strong
+          >
+        </p>
+
+        <p>
+          <strong
+            >The Student Disclosure Form confirms that no promises can be made about the transfer of credit to or from the University, the school's
+            academic requirements can be found in the University Catalog, and CTU cannot make any promises to you regarding employment, salaries, or
+            career advancement.</strong
+          >
+        </p>
+
+        <p>
+          <strong
+            >The Enrollment Agreement provides information related to the Institutional Refund policy and states that having reliable access to a
+            computer and internet are required to be successful in your program. It also states that you are required to pay for education charges
+            according to agreed upon terms and a delinquent account may be grounds for financial dismissal from the University. CTU reserves the right
+            to make changes to the tuition and fees at any time and notice of these changes will be communicated in the catalog.</strong
+          >
+        </p>
+
+        <p class="red italic">
+          When the PS has completed the application, congratulate them and proceed.
+        </p>
+
+        <p>
+          Let's schedule our next call. For this call, you should be in front of your computer so I can walk you through our Virtual Campus,
+          show you how to use CTU Messenger, and help you download the mobile app. How does that sound?
+        </p>
+
+        <p class="red italic">
+          Schedule call within 24 hours or your next working day and make it for a specific day, date, and time.
+        </p>
+
+        <p>Have you completed your FAFSA yet?</p>
+
+        <div class="indent">
+          <p class="red italic">If yes, confirm it was 2025-2026 and provide CTU's school code (010148).</p>
+          <p class="red italic">
+            If no and does not want to create their FSA ID and/or start their FAFSA, set the expectation that both are to be completed before your appointment.
+          </p>
+          <p class="red italic">
+            If no and would like guidance, walk them through creating their FSA ID using the
+            <a
+              href="https://livecareered.sharepoint.com/sites/CTU/admissions/Admissions%20Forms/FAFSA%20Scripts/FSA%20ID%20Guide.pdf"
+              class="link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >FSA ID Guide</a
+            >
+          </p>
+
+          <div class="indent">
+            <p>
+              The first step is to register for your FSA ID that you'll later use to sign your FAFSA. It's a good idea to add your cell phone number
+              in case you ever get locked out of your account. Let me know once you've successfully created your FSA ID and see a link to studentaid.gov.
+            </p>
+
+            <p>
+              Go ahead and click that link, then select the 2025-2026 FAFSA. It takes less than an hour to complete your FAFSA. The sooner you fill it out,
+              the sooner we can determine your eligibility. You will need your 2023 tax information and CTU's school code which is 010148. If you don't have
+              your taxes right now, it's ok, we can still get started, but you will need them at some point to complete the FAFSA.
+            </p>
+
+            <p class="red italic">
+              Walk the PS through starting and/or completing their 2025-2026 FAFSA using the
+              <a
+                href="https://rise.articulate.com/share/3yEEnI3dRf3P4vdqFBP1r5lNEZK8Ikn2#/"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >FAFSA Guide</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <p class="red italic">Reminder to schedule the Welcome Call in IMS.</p>
+        <p>
+          I look forward to speaking with you again on <span class="hint" style="font-weight: normal;">(insert day, date, and time)</span>. If you need to reach me before then, here is my phone number. <span class="red italic">Give the PS your contact information and advise them to write it down.</span>
+        </p>
+        <p class="red italic">Disposition as Paperwork Received in IMS or Meeting Given in ADM and schedule the Welcome Call.</p>
+        <p class="red italic">If COS, offer the PS a campus tour.</p>
+
+        <div class="bottom-space"></div>
+
+        <footer class="footer">
+          <a
+            href="file:///S:/CTU%20Admissions/Live%20Sites/FAQ/index.html"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CTU Admissions FAQ</a
+          >
+          <a
+            href="file:///S:/CTU%20Admissions/Live%20Sites/KC/index.html"
+            class="footer-link"
+            >Admissions Knowledge Center</a
+          >
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
