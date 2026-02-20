@@ -1,0 +1,1685 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dbdbdb;
+    color: #000;
+}
+
+/* page wrapper */
+.page {
+    max-width: 1500px;
+    margin: 0;
+    padding: 10px 0 40px 10px;
+}
+
+/* banner */
+.main-header {
+    margin-bottom: 8px;
+}
+
+.kc-banner {
+    background-image: url("https://livecareered.sharepoint.com/sites/CTU/admissions/training/Site%20Images/Knowledge%20Center_CTU_CD_V3/KC_Banner6.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 90px;
+    border-radius: 8px;
+}
+
+/* marquee */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+    padding: 8px 0;
+    border: 2px solid #af272f;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 50s linear infinite;
+    font-size: 18px;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.marquee span {
+    margin-right: 30px;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-container:hover .marquee {
+    animation-play-state: paused;
+}
+
+/* main layout */
+.main-grid {
+    display: grid;
+    grid-template-columns: 3.2fr 1.6fr;
+    gap: 20px;
+}
+
+/* cards */
+.card {
+    background: #f3f3f3;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.card:hover {
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* top panels */
+.top-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1.1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.box-std {
+    height: 475px;
+}
+
+.box-std .card-body {
+    height: calc(100% - 32px);
+    overflow-y: auto;
+}
+
+.resources-box .box30-content {
+    height: calc(100% - 32px);
+    overflow-y: auto;
+}
+
+/* bottom panels */
+.bottom-panels {
+    display: grid;
+    grid-template-columns: 1.15fr 2.3fr;
+    gap: 20px;
+}
+
+/* right column – grid so Directory aligns with Anniversaries/Links (top-panels 475px + margin 25px = 500px) */
+.right-column {
+    display: grid;
+    grid-template-rows: 485px auto;
+    gap: 15px;
+}
+
+.right-top {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 0;
+}
+
+.right-top .nav-card {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 0;
+}
+
+.small-card {
+    padding: 10px 15px;
+}
+
+/* Theme toggle + Ops button side by side – no enclosing boxes; blend with page background */
+.toggle-ops-row {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    align-items: stretch;
+}
+
+.toggle-ops-row .toggle-card,
+.toggle-ops-row .ops-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.toggle-ops-row .toggle-card:hover,
+.toggle-ops-row .ops-card:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.toggle-ops-row .toggle-card {
+    flex: 0 0 auto;
+}
+
+.toggle-ops-row .ops-card {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-ops-row .button-container99 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* headings & links */
+.hdrtxt2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #af272f;
+    text-align: center;
+    text-decoration: underline;
+    margin: 0 0 5px;
+}
+
+.link_9000 {
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 10px 0;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+/* Interview Scripts box: 11px line height, 10px margin */
+.interview-scripts-box .link_9000 {
+    line-height: 11px;
+    margin: 10px 0;
+}
+
+/* Student Prep Scripts box: 11px line height, 10px margin */
+.student-prep-scripts-box .link_9000 {
+    line-height: 11px;
+    margin: 10px 0;
+}
+
+/* Extra line spacing for long links that wrap (e.g. Student Prep Call & Documentation Guidelines) */
+.student-prep-scripts-box .link_9000.link-wrap {
+    line-height: 1.1;
+}
+
+/* Resources box: 11px line height, 10px margin */
+.resources-box .link_9000 {
+    line-height: 11px;
+    margin: 10px 0;
+}
+
+/* Extra line spacing for long links that wrap (e.g. Admissions Student Communication Guidelines) */
+.resources-box .link_9000.link-wrap {
+    line-height: 1.1;
+}
+
+/* Interview Scripts header: Oswald font */
+.interview-scripts-box .hdrtxt2 {
+    font-family: oswald !important;
+}
+
+/* Student Prep Scripts header: Oswald font */
+.student-prep-scripts-box .hdrtxt2 {
+    font-family: oswald !important;
+}
+
+/* Resources header: Oswald font */
+.resources-box .hdrtxt2 {
+    font-family: oswald !important;
+}
+
+.link_98,
+.link_97,
+.link_99,
+.link_198 {
+    color: black;
+    text-decoration: none;
+}
+
+.link_98:hover,
+.link_97:hover,
+.link_198:hover {
+    color: #af272f !important;
+}
+
+.link_99:hover {
+    color: #05aae1 !important;
+    text-decoration: none;
+}
+
+/* simple global <a> style override */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #af272f;
+    text-decoration: none;
+}
+
+/* Anniversaries */
+.anniversaries-card {
+    height: 445px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ann-header {
+    flex: 0 0 auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.ann-scroll {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-right: 4px;
+    font-size: 14px;
+    line-height: 1;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+.ann-scroll p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.ann-scroll .clearfix {
+    margin: 0;
+    padding: 0;
+    height: 10px;
+}
+
+/* link grid (CTUO intranet, etc.) */
+.links-card {
+    height: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 12px;
+    font-size: 16px;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    text-align: center;
+    background: #ffffff;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.link.red-hover:hover {
+    background: #af272f !important;
+    color: #fff !important;
+    border-color: #af272f !important;
+    transform: scale(1.05) !important;
+}
+
+.link.blue-hover:hover {
+    background: #05aae1 !important;
+    color: #fff !important;
+    border-color: #05aae1 !important;
+    transform: scale(1.05) !important;
+}
+
+.link.gray-hover:hover {
+    background: #ede8df !important;
+    color: black !important;
+    border-color: #ede8df !important;
+    transform: scale(1.05) !important;
+}
+
+.links-card .link.red-hover:hover {
+    background: rgb(175, 39, 47) !important;
+    color: #fff !important;
+    border-color: rgb(175, 39, 47) !important;
+    transform: scale(1.05) !important;
+}
+
+/* search – no enclosing box; blend with page background */
+.search-card {
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.search-card:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.search-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+#search-criteria {
+    flex: 1 1 auto;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+#search-criteria::placeholder {
+    color: #666;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #ffffff;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    margin-top: 8px;
+    height: 360px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Dimmed overlay when search results are open – blocks clicks on background */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99;
+    pointer-events: auto;
+}
+
+.QC_Head_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+.QC_head {
+    font-weight: normal;
+}
+
+.search-close {
+    cursor: pointer;
+    font-size: 16px;
+    color: #af272f;
+}
+
+#results-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+#results-content .contact-name {
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    font-size: 14px;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+.page-section .Page_Name {
+    margin-bottom: 4px;
+}
+
+#results-content .page-section .Page_Name {
+    color: #1c4269;
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-name {
+    padding: 2px 0;
+}
+
+.no-results-any {
+    font-style: italic;
+    padding: 8px 0;
+}
+
+.contact-name a {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.tags {
+    display: none;
+}
+
+.no-results {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* nav buttons on right – no enclosing box; blend with page background */
+.nav-card {
+    padding-top: 10px;
+    padding-bottom: 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.nav-card:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.nav-button-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    row-gap: 28px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    transform: translateY(-12px);
+}
+
+.col1 {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    grid-column: 1;
+    margin-bottom: 30px;
+}
+
+.col2 {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    grid-column: 1;
+    margin-bottom: 30px;
+}
+
+.col3 {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    grid-column: 1;
+}
+
+.col1 .nav-button,
+.col2 .nav-button,
+.col3 .nav-button {
+    width: 200px;
+    flex: 0 0 200px;
+}
+
+.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #ffffff;
+    box-shadow: 6px 7px 10px rgba(0,0,0,0.2);
+    font-size: 15px;
+    text-align: center;
+    padding: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #ede8df !important;
+    color: #000 !important;
+}
+
+/* directory */
+.directory-card {
+    height: 445px;
+    overflow: hidden;
+    display: flex;
+}
+
+.directory {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.Main_directory-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.directory-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+    gap: 4px;
+}
+
+.department {
+    font-weight: bold;
+    color: #673ab7;
+    font-size: 12px;
+    text-align: left;
+}
+
+.extension {
+    font-weight: bold;
+    font-size: 12px;
+    text-align: right;
+}
+
+.department1 {
+    font-weight: bold;
+    color: #673ab7;
+    font-size: 12px;
+}
+
+.extension1 {
+    font-weight: bold;
+    font-size: 12px;
+    text-align: right;
+    min-width: 50px;
+}
+
+.email-container {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    align-items: flex-start;
+}
+
+.email-section {
+    font-size: 12px;
+}
+
+.email-link {
+    text-decoration: none;
+    color: #007b7f;
+    font-weight: bold;
+}
+
+.email-link:hover {
+    text-decoration: none;
+    color: #af272f;
+}
+
+.email-linkCD {
+    text-decoration: none;
+    color: #007b7f;
+    font-weight: bold;
+}
+
+.email-linkCD:hover {
+    text-decoration: none;
+    color: #05aae1;
+}
+
+/* accordion in resources */
+.accordion {
+    margin: 6px 0;
+}
+
+.accordion-toggle {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.accordion-toggle .arrow {
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.accordion-toggle.accordion-open .arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-panel {
+    display: none;
+    margin-left: 15px;
+    margin-top: 4px;
+}
+
+/* CTU FAFSA/FSA ID Resources label font */
+.resources-box .accordion-toggle[data-target="#fafsa-block"] {
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+/* Demo Student Login & PW labels: font, bold, slight indent */
+.resources-box .accordion-toggle[data-target="#ctu-demo-login"],
+.resources-box .accordion-toggle[data-target="#cd-demo-login"] {
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    padding-left: 12px;
+}
+
+/* Username and Password sections in Resources box */
+.resources-box .accordion-panel .indent {
+    font-family: "Segoe UI", "Segoe", Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* Wrapper for Demo Student Login & PW User Name and Password */
+.demo-login-credentials {
+    border-left: 4px solid #af272f;
+    border-radius: 5px;
+}
+
+/* CD Application Demo Login: blue left border */
+.demo-login-credentials-cd {
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+    border-left-color: #05AAE1;
+}
+
+/* indent helper */
+.indent {
+    padding-left: 15px;
+}
+
+/* theme toggle switch */
+.theme-toggle-wrapper-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 36px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #a0a0a0;
+    transition: 0.4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0 4px 12px rgba(160, 160, 160, 0.6);
+}
+
+.slider:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(160, 160, 160, 0.85);
+}
+
+input:checked + .slider:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(175, 39, 47, 0.85);
+}
+
+.slider-text {
+    position: absolute;
+    font-size: 14px;
+    color: #666;
+    transition: 0.4s;
+}
+
+.light-text { right: 20px; color: white; }
+.dark-text { left: 12px; right: auto; opacity: 0; }
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    top: 4px;
+    left: 5px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #af272f;
+    box-shadow: 0 4px 12px rgba(175, 39, 47, 0.6);
+}
+
+input:checked + .slider:before {
+    transform: translateX(92px);
+}
+
+input:checked + .slider .light-text {
+    opacity: 0;
+}
+
+input:checked + .slider .dark-text {
+    opacity: 1;
+    color: white;
+}
+
+/* ops button */
+.button-container99 {
+    display: flex;
+    justify-content: center;
+}
+
+.request-support-btn {
+    background-color: #a0a0a0;
+    color: white;
+    border: 1px solid #000;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(128,128,128,0.8), 0 0 8px rgba(224,224,224,0.4);
+    transition: all 0.2s ease-in-out;
+    width: 210px;
+}
+
+.request-support-btn:hover {
+    background-color: #dbdbdb;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 16px rgba(180,175,165,0.6), 0 0 8px rgba(255,255,255,0.5);
+}
+
+.request-support-btn:active {
+    background-color: #c4ab8e;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Dark mode: grey page + right column, black content panels only, all text visible */
+
+body.dark-mode {
+    background-color: #808080;
+    color: #e8e8e8;
+}
+
+/* Grey "rest" – default for cards (search, toggle, ops) */
+body.dark-mode .card {
+    background-color: #505050;
+    border-color: #666;
+    color: #e8e8e8;
+}
+
+/* Nav-card: no box; blend with page background in dark mode too */
+body.dark-mode .nav-card {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Search-card: no box; blend with page background in dark mode too */
+body.dark-mode .search-card {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Toggle + Ops cards: no box; blend with page background in dark mode too */
+body.dark-mode .toggle-ops-row .toggle-card,
+body.dark-mode .toggle-ops-row .ops-card {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Black content panels: Interview Scripts, Student Prep, Resources, Anniversaries, and links-card box */
+body.dark-mode .card.box-std,
+body.dark-mode .card.anniversaries-card,
+body.dark-mode .card.links-card {
+    background-color: #0a0a0a;
+    border-color: #333;
+}
+
+/* Links-card box is black; intranet buttons inside are #d6d6d6 */
+body.dark-mode .links-card .link {
+    background-color: #d6d6d6;
+    border-color: #666;
+    color: #333;
+}
+
+body.dark-mode .links-card .link.red-hover:hover,
+body.dark-mode .links-card .link.blue-hover:hover {
+    color: #fff !important;
+}
+
+body.dark-mode .links-card .link.gray-hover:hover {
+    background-color: #ede8df !important;
+    color: #000 !important;
+    border-color: #ede8df !important;
+}
+
+/* Directory box: #d6d6d6 background, dark text */
+body.dark-mode .card.directory-card {
+    background-color: #d6d6d6;
+    border-color: #666;
+    color: #333;
+}
+
+body.dark-mode .card.directory-card .Main_directory-header {
+    color: #af272f;
+}
+
+body.dark-mode .card.directory-card .directory-item,
+body.dark-mode .card.directory-card .department,
+body.dark-mode .card.directory-card .department1,
+body.dark-mode .card.directory-card .extension,
+body.dark-mode .card.directory-card .extension1 {
+    color: #333;
+}
+
+body.dark-mode .card.directory-card .directory-item {
+    border-bottom-color: #999;
+}
+
+body.dark-mode .card.directory-card .department,
+body.dark-mode .card.directory-card .department1 {
+    color: #673ab7;
+}
+
+body.dark-mode .card.directory-card .email-link,
+body.dark-mode .card.directory-card .email-linkCD {
+    color: #007b7f;
+}
+
+body.dark-mode .card.directory-card .email-link:hover {
+    color: #af272f;
+}
+
+body.dark-mode .card.directory-card .email-linkCD:hover {
+    color: #05aae1;
+}
+
+/* Visible text in black content panels */
+body.dark-mode .card.box-std .hdrtxt2,
+body.dark-mode .card.anniversaries-card .hdrtxt2 {
+    color: #af272f;
+}
+
+body.dark-mode .card.box-std a,
+body.dark-mode .card.box-std .link_98,
+body.dark-mode .card.box-std .link_99,
+body.dark-mode .card.box-std .link_97,
+body.dark-mode .card.box-std .link_198,
+body.dark-mode .card.anniversaries-card a,
+body.dark-mode .card.anniversaries-card .ann-header,
+body.dark-mode .card.anniversaries-card .ann-header h4,
+body.dark-mode .card.anniversaries-card .ann-scroll,
+body.dark-mode .card.anniversaries-card .ann-scroll p {
+    color: #e8e8e8;
+}
+
+body.dark-mode .card.box-std .link_98:hover,
+body.dark-mode .card.box-std .link_97:hover,
+body.dark-mode .card.box-std .link_198:hover,
+body.dark-mode .card.anniversaries-card a:hover {
+    color: #ff7a7a !important;
+}
+
+body.dark-mode .card.box-std .link_99:hover {
+    color: #05aae1 !important;
+}
+
+body.dark-mode .card.box-std .accordion-toggle,
+body.dark-mode .card.box-std .accordion-panel,
+body.dark-mode .card.box-std .accordion-panel .indent,
+body.dark-mode .card.box-std .indent {
+    color: #e8e8e8;
+}
+
+body.dark-mode .card.box-std .accordion-toggle {
+    background: transparent;
+    color: #e8e8e8;
+}
+
+/* Nav buttons (Performance Support, Leader Resource Center, etc.): #d6d6d6 */
+body.dark-mode .nav-button {
+    background-color: #d6d6d6;
+    border-color: #666;
+    color: #333;
+}
+
+body.dark-mode .nav-button:hover {
+    background-color: #ede8df !important;
+    color: #000 !important;
+}
+
+body.dark-mode .request-support-btn {
+    background-color: #5a5a5a;
+    color: #e8e8e8;
+    border-color: #777;
+}
+
+body.dark-mode .request-support-btn:hover {
+    background-color: #6a6a6a;
+    color: #fff;
+    border-color: #777;
+}
+
+/* Search box: keep same light-mode colors and formatting in dark mode */
+body.dark-mode #search-criteria {
+    background-color: #ffffff;
+    border-color: #000;
+    color: #333;
+}
+
+body.dark-mode #search-criteria::placeholder {
+    color: #666;
+}
+
+body.dark-mode #search-btn {
+    background-color: #ffffff;
+    border-color: #000;
+    color: #333;
+}
+
+body.dark-mode #search-btn:hover {
+    background-color: #ffffff;
+}
+
+body.dark-mode .search-results {
+    background-color: #ffffff;
+    border-color: #000;
+}
+
+body.dark-mode .search-results .QC_Head_wrap {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+body.dark-mode .search-results #results-content,
+body.dark-mode .search-results .contact-name a {
+    color: #333;
+}
+
+body.dark-mode .search-results .page-section .Page_Name {
+    color: #1c4269;
+}
+
+body.dark-mode .search-results .no-results-any {
+    color: #333;
+}
+
+body.dark-mode .search-results .search-close {
+    color: #af272f;
+}
+
+body.dark-mode .search-results .no-results {
+    color: #333;
+}
+
+/* Dark mode scrollbars: #f4f4f4 track, #000000 thumb */
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #f4f4f4;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Resources section: wider track (lighter part), thinner thumb (black part) */
+.resources-box .box30-content::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Top scroll up / bottom scroll down black triangle buttons */
+.resources-box .box30-content::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.resources-box .box30-content::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.resources-box .box30-content::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.resources-box .box30-content::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.resources-box .box30-content::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Interview Scripts and Student Prep Scripts boxes */
+.box-std .card-body::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.box-std .card-body::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.box-std .card-body::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.box-std .card-body::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.box-std .card-body::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.box-std .card-body::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Anniversaries box */
+.ann-scroll::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ann-scroll::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ann-scroll::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ann-scroll::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ann-scroll::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.ann-scroll::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Directory box */
+.directory::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.directory::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.directory::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.directory::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.directory::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.directory::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Search results box: same scrollbar style as Resources (arrows + formatting) */
+#results-content::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#results-content::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#results-content::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#results-content::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#results-content::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+#results-content::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Search results scrollbar - Dark Mode */
+body.dark-mode #results-content::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode #results-content::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode #results-content::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode #results-content::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode #results-content::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+body.dark-mode #results-content::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Resources section: wider track (lighter part), thinner thumb (black part) - Dark Mode */
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Top scroll up / bottom scroll down black triangle buttons */
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+body.dark-mode .resources-box .box30-content::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Interview Scripts and Student Prep Scripts boxes in dark mode */
+body.dark-mode .box-std .card-body::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .box-std .card-body::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .box-std .card-body::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .box-std .card-body::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .box-std .card-body::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+body.dark-mode .box-std .card-body::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Anniversaries box in dark mode */
+body.dark-mode .ann-scroll::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .ann-scroll::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .ann-scroll::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .ann-scroll::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .ann-scroll::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+body.dark-mode .ann-scroll::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Apply same scrollbar style to Directory box in dark mode */
+body.dark-mode .directory::-webkit-scrollbar {
+    width: 18px;
+    background: #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .directory::-webkit-scrollbar-button:vertical:decrement {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 0L14 10H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .directory::-webkit-scrollbar-button:vertical:increment {
+    height: 18px;
+    background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23000' d='M7 10L14 0H0z'/%3E%3C/svg%3E") no-repeat center;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .directory::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: none;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+body.dark-mode .directory::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-left: 4px solid #f4f4f4;
+    border-right: 4px solid #f4f4f4;
+    border-top: 4px solid #f4f4f4;
+    border-bottom: 4px solid #f4f4f4;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+body.dark-mode .directory::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* Red border for Interview Scripts, Student Prep Scripts, and Resources boxes in light mode */
+.card.box-std {
+    border: 1px solid rgba(175, 39, 47, 0.4);
+}
+
+/* Red border for Anniversaries, Directory, and Intranet Links boxes in light mode */
+.card.anniversaries-card,
+.card.directory-card,
+.card.links-card {
+    border: 1px solid rgba(175, 39, 47, 0.4);
+}
+
+/* White border for box-std in dark mode */
+body.dark-mode .card.box-std {
+    border: 1px solid #ffffff !important;
+}
+
+/* White border for Anniversaries, Directory, and Intranet Links boxes in dark mode */
+body.dark-mode .card.anniversaries-card,
+body.dark-mode .card.directory-card,
+body.dark-mode .card.links-card {
+    border: 1px solid #ffffff !important;
+}
+
+/* Simple scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #dbdbdb;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b1e25;
+}
